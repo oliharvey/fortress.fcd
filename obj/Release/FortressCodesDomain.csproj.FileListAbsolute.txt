@@ -1,0 +1,10 @@
+C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Release\FortressCodesDomain.dll.config
+C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Release\FortressCodesDomain.dll
+C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Release\FortressCodesDomain.pdb
+C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Release\EntityFramework.dll
+C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Release\EntityFramework.SqlServer.dll
+C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Release\EntityFramework.xml
+C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Release\EntityFramework.SqlServer.xml
+C:\Development\Fortress Projects\Fortress\FortressCodesDomain\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
+C:\Development\Fortress Projects\Fortress\FortressCodesDomain\obj\Release\FortressCodesDomain.dll
+C:\Development\Fortress Projects\Fortress\FortressCodesDomain\obj\Release\FortressCodesDomain.pdb
