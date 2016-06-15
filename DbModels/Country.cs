@@ -1,10 +1,8 @@
 namespace FortressCodesDomain.DbModels
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("Country")]
     public partial class Country
@@ -26,6 +24,8 @@ namespace FortressCodesDomain.DbModels
         public string ISO { get; set; }
 
         public int? CurrencyID { get; set; }
+
+        public bool? Protected { get; set; }
 
         public virtual Currency Currency { get; set; }
 

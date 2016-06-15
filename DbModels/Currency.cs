@@ -4,7 +4,6 @@ namespace FortressCodesDomain.DbModels
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("Currency")]
     public partial class Currency
@@ -29,6 +28,8 @@ namespace FortressCodesDomain.DbModels
         public bool? Enabled { get; set; }
 
         public DateTime? LastModified { get; set; }
+
+        public bool? Protected { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Country> Countries { get; set; }

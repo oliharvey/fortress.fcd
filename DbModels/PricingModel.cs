@@ -41,6 +41,8 @@ namespace FortressCodesDomain.DbModels
 
         public int? FamilyId { get; set; }
 
+        public bool? Protected { get; set; }
+
         public virtual Country Country { get; set; }
 
         public virtual Family Family { get; set; }
