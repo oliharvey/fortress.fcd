@@ -8,3 +8,8 @@ C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Debug\EntityFr
 C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Debug\EntityFramework.SqlServer.xml
 C:\Development\Fortress Projects\Fortress\FortressCodesDomain\obj\Debug\FortressCodesDomain.dll
 C:\Development\Fortress Projects\Fortress\FortressCodesDomain\obj\Debug\FortressCodesDomain.pdb
+J:\Development\Fortress\New Fortress\fcd\bin\Debug\FortressCodesDomain.dll.config
+J:\Development\Fortress\New Fortress\fcd\bin\Debug\FortressCodesDomain.dll
+J:\Development\Fortress\New Fortress\fcd\bin\Debug\FortressCodesDomain.pdb
+J:\Development\Fortress\New Fortress\fcd\obj\Debug\FortressCodesDomain.dll
+J:\Development\Fortress\New Fortress\fcd\obj\Debug\FortressCodesDomain.pdb

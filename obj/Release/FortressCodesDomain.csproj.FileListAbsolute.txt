@@ -8,3 +8,8 @@ C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Release\Entity
 C:\Development\Fortress Projects\Fortress\FortressCodesDomain\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
 C:\Development\Fortress Projects\Fortress\FortressCodesDomain\obj\Release\FortressCodesDomain.dll
 C:\Development\Fortress Projects\Fortress\FortressCodesDomain\obj\Release\FortressCodesDomain.pdb
+J:\Development\Fortress\New Fortress\fcd\bin\Release\FortressCodesDomain.dll.config
+J:\Development\Fortress\New Fortress\fcd\bin\Release\FortressCodesDomain.dll
+J:\Development\Fortress\New Fortress\fcd\bin\Release\FortressCodesDomain.pdb
+J:\Development\Fortress\New Fortress\fcd\obj\Release\FortressCodesDomain.dll
+J:\Development\Fortress\New Fortress\fcd\obj\Release\FortressCodesDomain.pdb
