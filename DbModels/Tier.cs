@@ -1,10 +1,8 @@
 namespace FortressCodesDomain.DbModels
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("Tier")]
     public partial class Tier
@@ -22,6 +20,8 @@ namespace FortressCodesDomain.DbModels
         public string Name { get; set; }
 
         public int? PartnerId { get; set; }
+
+        public bool? Protected { get; set; }
 
         public virtual Partner Partner { get; set; }
 
