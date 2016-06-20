@@ -23,7 +23,7 @@ namespace FortressCodesDomain.DbModels
 
         public decimal? MonthlyPrice { get; set; }
 
-        public decimal? DailyPrice { get; set; }
+        public Decimal? DailyPrice { get; set; }
 
         public decimal? ExcessPrice { get; set; }
 
