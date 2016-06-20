@@ -1,10 +1,8 @@
 namespace FortressCodesDomain.DbModels
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("Transaction")]
     public partial class Transaction
@@ -43,6 +41,8 @@ namespace FortressCodesDomain.DbModels
         public string DeviceOS { get; set; }
 
         public int? TransactionTypeId { get; set; }
+
+        public Guid? TransactionGuid { get; set; }
 
         [StringLength(3000)]
         public string ExceptionMessage { get; set; }
