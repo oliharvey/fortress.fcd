@@ -87,6 +87,8 @@ namespace FortressCodesDomain.DbModels
                 .WithOptional(e => e.Partner)
                 .HasForeignKey(e => e.PartnerId);
 
+            modelBuilder.Entity<PricingModel>().Property(o => o.DailyPrice).HasPrecision(18,9);
+
             modelBuilder.Entity<Tier>()
                 .HasMany(e => e.PricingModels)
                 .WithOptional(e => e.Tier)

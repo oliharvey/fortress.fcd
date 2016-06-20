@@ -1,4 +1,3 @@
-C:\Development\Fortress Projects\Fortress\FortressCodesDomain\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
 C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Debug\FortressCodesDomain.dll.config
 C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Debug\FortressCodesDomain.dll
 C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Debug\FortressCodesDomain.pdb
