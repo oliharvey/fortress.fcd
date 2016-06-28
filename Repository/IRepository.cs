@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace FortressCodesDomain.Repository
@@ -20,6 +19,12 @@ namespace FortressCodesDomain.Repository
         Task<DeviceLevel> GetDeviceLevelByFormattedDeviceNameAsync(String formattedDeviceName, String userDeviceCountryIso, PricingModel pricingModel);
         Task<PricingModel> GetPricingModelByVoucherCodeAsync(String voucherCode);
         Task<PricingModel> GetPricingModelByDeviceIdAsync(Int32 deviceID);
+        Task<Device> GetDeviceByFormattedDeviceNameAsync(String formattedDeviceName);
+        Task<Tuple<FortressCodesDomain.DbModels.Device, Boolean>> GetDBDeviceOrUnknownDeviceAsync(String capacityRaw,
+                                                                                                           String modelRaw,
+                                                                                                           String countryIso);
+        Task<Tuple<Boolean, String>> GetDeviceLevelAsync(String modelRaw, String capacityRaw, String voucherCode, String countryIso);
+        Task<PricingModel> GetPricingModelByDevicePartnerFamilyAsync(string deviceLevel, Int32 tierId, Int32 familyId);
 
         Task<Boolean> AddAsync<T>(T entity) where T : class;
         Task<Boolean> DeleteAsync<T>(T entity) where T : class;

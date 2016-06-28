@@ -164,6 +164,109 @@ namespace FortressCodesDomain.Repository
             return ret;
         }
 
+        public async Task<Device> GetDeviceByFormattedDeviceNameAsync(String formattedDeviceName)
+        {
+            return await db.Devices.SingleOrDefaultAsync(d => d.name_raw == formattedDeviceName.ToLower());
+        }
+
+
+        public async Task<Tuple<FortressCodesDomain.DbModels.Device, Boolean>> GetDBDeviceOrUnknownDeviceAsync(String capacityRaw,
+                                                                                                               String modelRaw,
+                                                                                                               String countryIso)
+        {
+            FortressCodesDomain.DbModels.Device fcdDevice = null;
+            Boolean bIsDeviceMissing = false;
+
+            String formattedDeviceName = String.Format("{0} {1}gb", modelRaw,
+                                                       DeviceSizeHelper.CalculateDeviceTotalSizeFromRaw(capacityRaw));
+
+            var masterDevice = await db.Devices.SingleOrDefaultAsync(d => d.name_raw.ToLower() == formattedDeviceName.ToLower());
+            if (masterDevice == null)
+            {
+                var unknownDevice = await db.Devices.SingleOrDefaultAsync(d => d.name_raw.ToLower().Contains("unknown"));
+                if (unknownDevice != null)
+                {
+                    //if returning the master unknown device, the users device is missing
+                    fcdDevice = unknownDevice;
+                    bIsDeviceMissing = true;
+                }
+            }
+            else
+            {
+                fcdDevice = masterDevice;
+            }
+
+            return new Tuple<Device, bool>(fcdDevice, bIsDeviceMissing);
+        }
+
+        public async Task<Tuple<Boolean, String>> GetDeviceLevelAsync(String modelRaw, String capacityRaw, String voucherCode, String countryIso)
+        {
+            Boolean bIsUnknownDevice = false;
+            String sLevelName = null;
+
+            //format the device name with size, which is calculated to the nearest multiple of 16gb
+            String formattedDeviceName = String.Format("{0} {1}gb", modelRaw,
+                                                       DeviceSizeHelper.CalculateDeviceTotalSizeFromRaw(capacityRaw));
+
+            var voucher = db.Vouchers.SingleOrDefault(v => v.vouchercode == voucherCode);
+
+            //Int32? iPartnerID = null;
+            PricingModel pricingModel = null;
+            if (voucher != null)
+            {
+                var metadata = voucher.VoucherMetadatas.FirstOrDefault();
+                if (metadata != null)
+                {
+                    if (metadata.PricingModel != null)
+                    {
+                        pricingModel = metadata.PricingModel;
+                        //iPartnerID = metadata.PricingModel.PartnerId;
+                    }
+                }
+            }
+
+
+            //match on the formatted name, and the partner id
+            //TODO: include country lookup, but is it country of device or voucher
+
+            //Check if the device the user has registered with is known to the system, if not return the unknown device
+            var device = await GetDeviceByFormattedDeviceNameAsync(formattedDeviceName);
+            if (device == null)
+            {
+
+
+                var unknownDevice = await GetDeviceByFormattedDeviceNameAsync("Unknown Device");
+                if (unknownDevice != null)
+                {
+                    bIsUnknownDevice = true;
+                    //find the unknown device level that matches the voucher level
+                    var unknownDeviceLevel = unknownDevice.DeviceLevels.SingleOrDefault(dl => dl.LevelId == pricingModel.LevelId);
+                    if (unknownDeviceLevel != null)
+                    {
+                        sLevelName = unknownDeviceLevel.Level.Name;
+                    }
+                }
+            }
+            else
+            {
+
+                var deviceLevel = await GetDeviceLevelByFormattedDeviceNameAsync(formattedDeviceName, countryIso, pricingModel);
+                if (deviceLevel != null)
+                {
+                    sLevelName = deviceLevel.Level.Name;
+                }
+            }
+            return new Tuple<Boolean, String>(bIsUnknownDevice, sLevelName);
+        }
+
+        public async Task<PricingModel> GetPricingModelByDevicePartnerFamilyAsync(string deviceLevel, Int32 tierId, Int32 familyId)
+        {
+            PricingModel ret = null;
+
+            ret = await db.PricingModels.SingleOrDefaultAsync(pm => pm.FamilyId == familyId && pm.Level.Name == deviceLevel && pm.TeirId == tierId);
+
+            return ret;
+        }
 
         public Boolean IsValid<T>(T entity)
         {

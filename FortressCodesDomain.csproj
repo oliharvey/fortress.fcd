@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DeviceSizeHelper.cs" />
     <Compile Include="DbModels\AspNetRole.cs" />
     <Compile Include="DbModels\AspNetUser.cs" />
     <Compile Include="DbModels\AspNetUserClaim.cs" />

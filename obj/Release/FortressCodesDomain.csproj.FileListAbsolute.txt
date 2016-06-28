@@ -13,3 +13,8 @@ J:\Development\Fortress\New Fortress\fcd\bin\Release\FortressCodesDomain.dll
 J:\Development\Fortress\New Fortress\fcd\bin\Release\FortressCodesDomain.pdb
 J:\Development\Fortress\New Fortress\fcd\obj\Release\FortressCodesDomain.dll
 J:\Development\Fortress\New Fortress\fcd\obj\Release\FortressCodesDomain.pdb
+J:\Development\Fortress\27-06-2016\fcd\bin\Release\FortressCodesDomain.dll.config
+J:\Development\Fortress\27-06-2016\fcd\bin\Release\FortressCodesDomain.dll
+J:\Development\Fortress\27-06-2016\fcd\bin\Release\FortressCodesDomain.pdb
+J:\Development\Fortress\27-06-2016\fcd\obj\Release\FortressCodesDomain.dll
+J:\Development\Fortress\27-06-2016\fcd\obj\Release\FortressCodesDomain.pdb
