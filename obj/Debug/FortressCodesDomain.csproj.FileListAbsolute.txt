@@ -22,3 +22,4 @@ J:\Development\Fortress\Working\fcd\bin\Debug\FortressCodesDomain.dll
 J:\Development\Fortress\Working\fcd\bin\Debug\FortressCodesDomain.pdb
 J:\Development\Fortress\Working\fcd\obj\Debug\FortressCodesDomain.dll
 J:\Development\Fortress\Working\fcd\obj\Debug\FortressCodesDomain.pdb
+J:\Development\Fortress\Working\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache

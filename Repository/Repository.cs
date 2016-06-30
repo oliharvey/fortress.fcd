@@ -115,7 +115,7 @@ namespace FortressCodesDomain.Repository
         {
             DeviceLevel ret = null;
             //TODO: leaving the country check in for the time being to test voucher validation
-            var device = await db.Devices.SingleOrDefaultAsync(d => d.name_raw.ToLower() == formattedDeviceName.ToLower() && d.Country.ISO == userDeviceCountryIso);
+            var device = await db.Devices.SingleOrDefaultAsync(d => d.name_raw.ToLower() == formattedDeviceName.ToLower());
             if (device != null)
             {
                 if (pricingModel.Country.ISO == userDeviceCountryIso)

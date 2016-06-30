@@ -73,7 +73,9 @@ namespace FortressCodesDomain
             [Description("Change Coverage")]
             ChangeCoverage,
             [Description("Missing Device")]
-            MissingDevice
+            MissingDevice,
+            [Description("Missing Device Activation")]
+            MissingDeviceActivation,
         }
 
         public static string GetEnumDescription(Enum value)
