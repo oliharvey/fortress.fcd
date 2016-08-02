@@ -177,10 +177,11 @@ namespace FortressCodesDomain.Repository
             FortressCodesDomain.DbModels.Device fcdDevice = null;
             Boolean bIsDeviceMissing = false;
 
-            String formattedDeviceName = String.Format("{0} {1}gb", modelRaw,
-                                                       DeviceSizeHelper.CalculateDeviceTotalSizeFromRaw(capacityRaw));
+            var calcStorage = DeviceSizeHelper.CalculateDeviceTotalSizeFromRaw(capacityRaw);
 
-            var masterDevice = await db.Devices.SingleOrDefaultAsync(d => d.name_raw.ToLower() == formattedDeviceName.ToLower());
+            String formattedDeviceName = String.Format("{0} {1}gb", modelRaw, calcStorage.ToString());
+
+            var masterDevice = await db.Devices.SingleOrDefaultAsync(d => d.make.ToLower() + " " + d.model.ToLower() + " " + d.capacity == formattedDeviceName.ToLower());
             if (masterDevice == null)
             {
                 var unknownDevice = await db.Devices.SingleOrDefaultAsync(d => d.name_raw.ToLower().Contains("unknown"));

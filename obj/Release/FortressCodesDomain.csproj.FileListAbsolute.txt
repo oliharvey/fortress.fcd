@@ -23,3 +23,11 @@ J:\Development\Fortress\Working\fcd\bin\Release\FortressCodesDomain.dll
 J:\Development\Fortress\Working\fcd\bin\Release\FortressCodesDomain.pdb
 J:\Development\Fortress\Working\fcd\obj\Release\FortressCodesDomain.dll
 J:\Development\Fortress\Working\fcd\obj\Release\FortressCodesDomain.pdb
+C:\Development\Fortress\Working\fcd\bin\Release\FortressCodesDomain.dll.config
+C:\Development\Fortress\Working\fcd\bin\Release\FortressCodesDomain.dll
+C:\Development\Fortress\Working\fcd\bin\Release\FortressCodesDomain.pdb
+C:\Development\Fortress\Working\fcd\bin\Release\EntityFramework.xml
+C:\Development\Fortress\Working\fcd\bin\Release\EntityFramework.SqlServer.xml
+C:\Development\Fortress\Working\fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
+C:\Development\Fortress\Working\fcd\obj\Release\FortressCodesDomain.dll
+C:\Development\Fortress\Working\fcd\obj\Release\FortressCodesDomain.pdb
