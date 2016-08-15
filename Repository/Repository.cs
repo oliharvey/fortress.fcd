@@ -169,8 +169,16 @@ namespace FortressCodesDomain.Repository
             return await db.Devices.SingleOrDefaultAsync(d => d.name_raw == formattedDeviceName.ToLower());
         }
 
+        public async Task<Device> GetDeviceByMakeModelCapacityAsync(String make, String model, String capacity)
+        {
+            return await db.Devices.SingleOrDefaultAsync(d => d.make.ToLower() == make.ToLower() &&
+                                                              d.model.ToLower() == model.ToLower() &&
+                                                              d.capacity.ToLower() == capacity.ToLower() + "gb");
+        }
 
-        public async Task<Tuple<FortressCodesDomain.DbModels.Device, Boolean>> GetDBDeviceOrUnknownDeviceAsync(String capacityRaw,
+
+        public async Task<Tuple<FortressCodesDomain.DbModels.Device, Boolean>> GetDBDeviceOrUnknownDeviceAsync(String make,
+                                                                                                               String capacityRaw,
                                                                                                                String modelRaw,
                                                                                                                String countryIso)
         {
@@ -179,9 +187,7 @@ namespace FortressCodesDomain.Repository
 
             var calcStorage = DeviceSizeHelper.CalculateDeviceTotalSizeFromRaw(capacityRaw);
 
-            String formattedDeviceName = String.Format("{0} {1}gb", modelRaw, calcStorage.ToString());
-
-            var masterDevice = await db.Devices.SingleOrDefaultAsync(d => d.make.ToLower() + " " + d.model.ToLower() + " " + d.capacity == formattedDeviceName.ToLower());
+            var masterDevice = await GetDeviceByMakeModelCapacityAsync(make, modelRaw, calcStorage.ToString());
             if (masterDevice == null)
             {
                 var unknownDevice = await db.Devices.SingleOrDefaultAsync(d => d.name_raw.ToLower().Contains("unknown"));
@@ -200,13 +206,13 @@ namespace FortressCodesDomain.Repository
             return new Tuple<Device, bool>(fcdDevice, bIsDeviceMissing);
         }
 
-        public async Task<Tuple<Boolean, String>> GetDeviceLevelAsync(String modelRaw, String capacityRaw, String voucherCode, String countryIso)
+        public async Task<Tuple<Boolean, String>> GetDeviceLevelAsync(String make, String modelRaw, String capacityRaw, String voucherCode, String countryIso)
         {
             Boolean bIsUnknownDevice = false;
             String sLevelName = null;
 
             //format the device name with size, which is calculated to the nearest multiple of 16gb
-            String formattedDeviceName = String.Format("{0} {1}gb", modelRaw,
+            String formattedDeviceName = String.Format("{0} {1} {2}gb", make, modelRaw,
                                                        DeviceSizeHelper.CalculateDeviceTotalSizeFromRaw(capacityRaw));
 
             var voucher = db.Vouchers.SingleOrDefault(v => v.vouchercode == voucherCode);
