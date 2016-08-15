@@ -31,3 +31,9 @@ C:\Development\Fortress\Working\fcd\bin\Release\EntityFramework.SqlServer.xml
 C:\Development\Fortress\Working\fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
 C:\Development\Fortress\Working\fcd\obj\Release\FortressCodesDomain.dll
 C:\Development\Fortress\Working\fcd\obj\Release\FortressCodesDomain.pdb
+D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\FortressCodesDomain.dll.config
+D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\FortressCodesDomain.dll
+D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\FortressCodesDomain.pdb
+D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Release\FortressCodesDomain.dll
+D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Release\FortressCodesDomain.pdb
+D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
