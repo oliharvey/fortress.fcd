@@ -169,10 +169,10 @@ namespace FortressCodesDomain.Repository
             return await db.Devices.SingleOrDefaultAsync(d => d.name_raw == formattedDeviceName.ToLower());
         }
 
-        public async Task<Device> GetDeviceByMakeModelCapacityAsync(String make, String model, String capacity)
+        public async Task<Device> GetDeviceByMakeModelRawCapacityAsync(String make, String modelRaw, String capacity)
         {
             return await db.Devices.SingleOrDefaultAsync(d => d.make.ToLower() == make.ToLower() &&
-                                                              d.model.ToLower() == model.ToLower() &&
+                                                              d.model_raw.ToLower() == modelRaw.ToLower() &&
                                                               d.capacity.ToLower() == capacity.ToLower() + "gb");
         }
 
@@ -187,7 +187,7 @@ namespace FortressCodesDomain.Repository
 
             var calcStorage = DeviceSizeHelper.CalculateDeviceTotalSizeFromRaw(capacityRaw);
 
-            var masterDevice = await GetDeviceByMakeModelCapacityAsync(make, modelRaw, calcStorage.ToString());
+            var masterDevice = await GetDeviceByMakeModelRawCapacityAsync(make, modelRaw, calcStorage.ToString());
             if (masterDevice == null)
             {
                 var unknownDevice = await db.Devices.SingleOrDefaultAsync(d => d.name_raw.ToLower().Contains("unknown"));
@@ -206,14 +206,13 @@ namespace FortressCodesDomain.Repository
             return new Tuple<Device, bool>(fcdDevice, bIsDeviceMissing);
         }
 
+
         public async Task<Tuple<Boolean, String>> GetDeviceLevelAsync(String make, String modelRaw, String capacityRaw, String voucherCode, String countryIso)
         {
             Boolean bIsUnknownDevice = false;
             String sLevelName = null;
 
-            //format the device name with size, which is calculated to the nearest multiple of 16gb
-            String formattedDeviceName = String.Format("{0} {1} {2}gb", make, modelRaw,
-                                                       DeviceSizeHelper.CalculateDeviceTotalSizeFromRaw(capacityRaw));
+            String deviceCapacity = DeviceSizeHelper.CalculateDeviceTotalSizeFromRaw(capacityRaw).ToString();
 
             var voucher = db.Vouchers.SingleOrDefault(v => v.vouchercode == voucherCode);
 
@@ -232,16 +231,13 @@ namespace FortressCodesDomain.Repository
                 }
             }
 
-
             //match on the formatted name, and the partner id
             //TODO: include country lookup, but is it country of device or voucher
 
             //Check if the device the user has registered with is known to the system, if not return the unknown device
-            var device = await GetDeviceByFormattedDeviceNameAsync(formattedDeviceName);
+            var device = await GetDeviceByMakeModelRawCapacityAsync(make, modelRaw, capacityRaw);
             if (device == null)
             {
-
-
                 var unknownDevice = await GetDeviceByFormattedDeviceNameAsync("Unknown Device");
                 if (unknownDevice != null)
                 {
@@ -256,8 +252,11 @@ namespace FortressCodesDomain.Repository
             }
             else
             {
-
-                var deviceLevel = await GetDeviceLevelByFormattedDeviceNameAsync(formattedDeviceName, countryIso, pricingModel);
+                var deviceLevel = await GetDeviceLevelByDeviceDetailsAsync(make,
+                                                                           modelRaw,
+                                                                           deviceCapacity,
+                                                                           countryIso,
+                                                                           pricingModel);
                 if (deviceLevel != null)
                 {
                     sLevelName = deviceLevel.Level.Name;
@@ -265,6 +264,29 @@ namespace FortressCodesDomain.Repository
             }
             return new Tuple<Boolean, String>(bIsUnknownDevice, sLevelName);
         }
+
+
+        public async Task<DeviceLevel> GetDeviceLevelByDeviceDetailsAsync(String deviceMake, String deviceModelRaw,
+                                                                                  String deviveCapactiy, String userDeviceCountryIso,
+                                                                                    PricingModel pricingModel)
+        {
+            DeviceLevel ret = null;
+            var device = await db.Devices.SingleOrDefaultAsync(d =>
+                d.make.ToLower() == deviceMake.ToLower() &&
+                d.model_raw.ToLower() == deviceModelRaw.ToLower() &&
+                d.capacity.ToLower() == deviveCapactiy.ToLower() + "gb");
+
+            if (device != null)
+            {
+                if (pricingModel.Country.ISO == userDeviceCountryIso)
+                {
+                    ret = device.DeviceLevels.SingleOrDefault(dl => dl.PartnerId == pricingModel.PartnerId);
+                }
+            }
+            return ret;
+        }
+
+        
 
         public async Task<PricingModel> GetPricingModelByDevicePartnerFamilyAsync(string deviceLevel, Int32 tierId, Int32 familyId)
         {

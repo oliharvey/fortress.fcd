@@ -21,7 +21,7 @@ namespace FortressCodesDomain.Repository
         Task<PricingModel> GetPricingModelByDeviceIdAsync(Int32 deviceID);
         
         Task<Device> GetDeviceByFormattedDeviceNameAsync(String formattedDeviceName);
-        Task<Device> GetDeviceByMakeModelCapacityAsync(String make, String model, String capacity);
+        Task<Device> GetDeviceByMakeModelRawCapacityAsync(String make, String model, String capacity);
         Task<Tuple<FortressCodesDomain.DbModels.Device, Boolean>> GetDBDeviceOrUnknownDeviceAsync(String make, 
                                                                                                   String capacityRaw,
                                                                                                   String modelRaw,
