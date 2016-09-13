@@ -29,6 +29,6 @@ C:\Development\Fortress\Working\fcd\obj\Release\FortressCodesDomain.pdb
 J:\Development\Fortress\Working\fcd\bin\Release\FortressCodesDomain.dll.config
 J:\Development\Fortress\Working\fcd\bin\Release\FortressCodesDomain.dll
 J:\Development\Fortress\Working\fcd\bin\Release\FortressCodesDomain.pdb
-J:\Development\Fortress\Working\fcd\bin\Release\EntityFramework.xml
 J:\Development\Fortress\Working\fcd\obj\Release\FortressCodesDomain.dll
 J:\Development\Fortress\Working\fcd\obj\Release\FortressCodesDomain.pdb
+J:\Development\Fortress\Working\fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
