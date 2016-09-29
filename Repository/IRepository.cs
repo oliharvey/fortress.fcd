@@ -19,11 +19,14 @@ namespace FortressCodesDomain.Repository
         Task<DeviceLevel> GetDeviceLevelByFormattedDeviceNameAsync(String formattedDeviceName, String userDeviceCountryIso, PricingModel pricingModel);
         Task<PricingModel> GetPricingModelByVoucherCodeAsync(String voucherCode);
         Task<PricingModel> GetPricingModelByDeviceIdAsync(Int32 deviceID);
+
         Task<Device> GetDeviceByFormattedDeviceNameAsync(String formattedDeviceName);
-        Task<Tuple<FortressCodesDomain.DbModels.Device, Boolean>> GetDBDeviceOrUnknownDeviceAsync(String capacityRaw,
-                                                                                                           String modelRaw,
-                                                                                                           String countryIso);
-        Task<Tuple<Boolean, String>> GetDeviceLevelAsync(String modelRaw, String capacityRaw, String voucherCode, String countryIso);
+        Task<Device> GetDeviceByMakeModelCapacityAsync(String make, String model, String capacity);
+        Task<Tuple<FortressCodesDomain.DbModels.Device, Boolean>> GetDBDeviceOrUnknownDeviceAsync(String make,
+                                                                                                  String capacity,
+                                                                                                  String model,
+                                                                                                  String countryIso);
+        Task<Tuple<Boolean, String>> GetDeviceLevelAsync(String make, String model, String capacity, String voucherCode, String countryIso);
         Task<PricingModel> GetPricingModelByDevicePartnerFamilyAsync(string deviceLevel, Int32 tierId, Int32 familyId);
 
         Task<Boolean> AddAsync<T>(T entity) where T : class;

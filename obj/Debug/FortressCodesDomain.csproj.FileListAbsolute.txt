@@ -20,8 +20,6 @@ J:\Development\Fortress\27-06-2016\fcd\obj\Debug\FortressCodesDomain.pdb
 J:\Development\Fortress\Working\fcd\bin\Debug\FortressCodesDomain.dll.config
 J:\Development\Fortress\Working\fcd\bin\Debug\FortressCodesDomain.dll
 J:\Development\Fortress\Working\fcd\bin\Debug\FortressCodesDomain.pdb
+J:\Development\Fortress\Working\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
 J:\Development\Fortress\Working\fcd\obj\Debug\FortressCodesDomain.dll
 J:\Development\Fortress\Working\fcd\obj\Debug\FortressCodesDomain.pdb
-J:\Development\Fortress\Working\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
-J:\Development\Fortress\Working\fcd\bin\Debug\EntityFramework.xml
-J:\Development\Fortress\Working\fcd\bin\Debug\EntityFramework.SqlServer.xml
