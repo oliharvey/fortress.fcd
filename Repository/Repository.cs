@@ -240,7 +240,8 @@ namespace FortressCodesDomain.Repository
             //TODO: include country lookup, but is it country of device or voucher
 
             //Check if the device the user has registered with is known to the system, if not return the unknown device
-            var device = await GetDeviceByMakeModelCapacityAsync(make, model, capacity);
+            //var device = await GetDeviceByMakeModelCapacityAsync(make, model, capacity);
+            var device = await GetDeviceByMakeModelCapacityAsync(make, model, deviceCapacity);
             if (device == null)
             {
                 var unknownDevice = await GetDeviceByFormattedDeviceNameAsync("Unknown Device");
