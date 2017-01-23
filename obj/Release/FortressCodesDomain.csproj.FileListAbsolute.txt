@@ -32,8 +32,9 @@ J:\Development\Fortress\Working\fcd\bin\Release\FortressCodesDomain.pdb
 J:\Development\Fortress\Working\fcd\obj\Release\FortressCodesDomain.dll
 J:\Development\Fortress\Working\fcd\obj\Release\FortressCodesDomain.pdb
 J:\Development\Fortress\Working\fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
-J:\Development\Fortress\fcd\bin\Release\FortressCodesDomain.dll.config
-J:\Development\Fortress\fcd\bin\Release\FortressCodesDomain.dll
-J:\Development\Fortress\fcd\bin\Release\FortressCodesDomain.pdb
-J:\Development\Fortress\fcd\obj\Release\FortressCodesDomain.dll
-J:\Development\Fortress\fcd\obj\Release\FortressCodesDomain.pdb
+D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\FortressCodesDomain.dll.config
+D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\FortressCodesDomain.dll
+D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\FortressCodesDomain.pdb
+D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
+D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Release\FortressCodesDomain.dll
+D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Release\FortressCodesDomain.pdb
