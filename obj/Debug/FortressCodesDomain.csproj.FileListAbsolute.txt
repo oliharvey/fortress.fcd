@@ -29,3 +29,11 @@ D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Debug\FortressCodesDomain
 D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
 D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Debug\FortressCodesDomain.dll
 D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Debug\FortressCodesDomain.pdb
+J:\Development\Fortress\fcd\bin\Debug\FortressCodesDomain.dll.config
+J:\Development\Fortress\fcd\bin\Debug\FortressCodesDomain.dll
+J:\Development\Fortress\fcd\bin\Debug\FortressCodesDomain.pdb
+J:\Development\Fortress\fcd\bin\Debug\Newtonsoft.Json.dll
+J:\Development\Fortress\fcd\bin\Debug\Newtonsoft.Json.xml
+J:\Development\Fortress\fcd\obj\Debug\FortressCodesDomain.dll
+J:\Development\Fortress\fcd\obj\Debug\FortressCodesDomain.pdb
+J:\Development\Fortress\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
