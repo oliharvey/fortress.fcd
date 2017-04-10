@@ -241,31 +241,34 @@ namespace FortressCodesDomain.Repository
 
             //Check if the device the user has registered with is known to the system, if not return the unknown device
             //var device = await GetDeviceByMakeModelCapacityAsync(make, model, capacity);
-            var device = await GetDeviceByMakeModelCapacityAsync(make, model, deviceCapacity);
-            if (device == null)
+            if (pricingModel != null)
             {
-                var unknownDevice = await GetDeviceByFormattedDeviceNameAsync("Unknown Device");
-                if (unknownDevice != null)
+                var device = await GetDeviceByMakeModelCapacityAsync(make, model, deviceCapacity);
+                if (device == null)
                 {
-                    bIsUnknownDevice = true;
-                    //find the unknown device level that matches the voucher level
-                    var unknownDeviceLevel = unknownDevice.DeviceLevels.SingleOrDefault(dl => dl.LevelId == pricingModel.LevelId);
-                    if (unknownDeviceLevel != null)
+                    var unknownDevice = await GetDeviceByFormattedDeviceNameAsync("Unknown Device");
+                    if (unknownDevice != null)
                     {
-                        sLevelName = unknownDeviceLevel.Level.Name;
+                        bIsUnknownDevice = true;
+                        //find the unknown device level that matches the voucher level
+                        var unknownDeviceLevel = unknownDevice.DeviceLevels.SingleOrDefault(dl => dl.LevelId == pricingModel.LevelId);
+                        if (unknownDeviceLevel != null)
+                        {
+                            sLevelName = unknownDeviceLevel.Level.Name;
+                        }
                     }
                 }
-            }
-            else
-            {
-                var deviceLevel = await GetDeviceLevelByDeviceDetailsAsync(make,
-                                                                           model,
-                                                                           deviceCapacity,
-                                                                           countryIso,
-                                                                           pricingModel);
-                if (deviceLevel != null)
+                else
                 {
-                    sLevelName = deviceLevel.Level.Name;
+                    var deviceLevel = await GetDeviceLevelByDeviceDetailsAsync(make,
+                                                                               model,
+                                                                               deviceCapacity,
+                                                                               countryIso,
+                                                                               pricingModel);
+                    if (deviceLevel != null)
+                    {
+                        sLevelName = deviceLevel.Level.Name;
+                    }
                 }
             }
             return new Tuple<Boolean, String>(bIsUnknownDevice, sLevelName);
@@ -301,6 +304,18 @@ namespace FortressCodesDomain.Repository
             ret = await db.PricingModels.SingleOrDefaultAsync(pm => pm.FamilyId == familyId &&
                                                                     pm.Level.Name == deviceLevel &&
                                                                     pm.TeirId == tierId);
+
+            return ret;
+        }
+
+        public async Task<PricingModel> GetActivePricingModelByDevicePartnerFamilyAsync(String deviceLevel, Int32 tierId, Int32 familyId)
+        {
+            PricingModel ret = null;
+
+            ret = await db.PricingModels.SingleOrDefaultAsync(pm => pm.FamilyId == familyId &&
+                                                                    pm.Level.Name == deviceLevel &&
+                                                                    pm.TeirId == tierId &&
+                                                                    pm.Active == true);
 
             return ret;
         }

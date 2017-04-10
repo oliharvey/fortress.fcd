@@ -28,6 +28,7 @@ namespace FortressCodesDomain.Repository
                                                                                                   String countryIso);
         Task<Tuple<Boolean, String>> GetDeviceLevelAsync(String make, String model, String capacity, String voucherCode, String countryIso);
         Task<PricingModel> GetPricingModelByDevicePartnerFamilyAsync(string deviceLevel, Int32 tierId, Int32 familyId);
+        Task<PricingModel> GetActivePricingModelByDevicePartnerFamilyAsync(String deviceLevel, Int32 tierId, Int32 familyId);
 
         Task<Boolean> AddAsync<T>(T entity) where T : class;
         Task<Boolean> DeleteAsync<T>(T entity) where T : class;
