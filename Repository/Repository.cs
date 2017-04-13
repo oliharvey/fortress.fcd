@@ -149,6 +149,11 @@ namespace FortressCodesDomain.Repository
             return ret;
         }
 
+        public async Task<IEnumerable<PricingModel>> GetPricingModelsByFamilyIdAsync(Int32 familyId, Int32 deviceLevelID)
+        {
+            return await db.PricingModels.Where(pm => pm.FamilyId == familyId && pm.LevelId == deviceLevelID).ToListAsync();
+        }
+
         public async Task<PricingModel> GetPricingModelByDeviceIdAsync(Int32 deviceID)
         {
             PricingModel ret = null;
@@ -167,6 +172,8 @@ namespace FortressCodesDomain.Repository
             }
             return ret;
         }
+
+
 
         public async Task<Device> GetDeviceByFormattedDeviceNameAsync(String formattedDeviceName)
         {
@@ -308,6 +315,16 @@ namespace FortressCodesDomain.Repository
             return ret;
         }
 
+        public async Task<IEnumerable<PricingModel>> GetActivePricingModelByFamilyAsync(int familyId)
+        {
+            IEnumerable<PricingModel> ret = null;
+
+            ret = await db.PricingModels.Where(pm => pm.FamilyId == familyId &&
+                                                     pm.Active == true).ToListAsync();
+
+            return ret;
+        }
+
         public async Task<PricingModel> GetActivePricingModelByDevicePartnerFamilyAsync(String deviceLevel, Int32 tierId, Int32 familyId)
         {
             PricingModel ret = null;
@@ -421,5 +438,7 @@ namespace FortressCodesDomain.Repository
             T query = db.Set<T>().SingleOrDefault(predicate);
             return query;
         }
+
+
     }
 }
