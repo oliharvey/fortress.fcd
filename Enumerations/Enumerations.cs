@@ -11,7 +11,8 @@ namespace FortressCodesDomain
             Voucher = 1,
             Promo = 2,
             Gateway = 3,
-            Deductible = 4
+            Deductible = 4,
+            Billing = 5
         }
 
         public enum MethodName
