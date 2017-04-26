@@ -154,6 +154,11 @@ namespace FortressCodesDomain.Repository
             return await db.PricingModels.Where(pm => pm.FamilyId == familyId && pm.LevelId == deviceLevelID).ToListAsync();
         }
 
+        public async Task<PricingModel> GetPricingModelByIdAsync(Int32 id)
+        {
+            return await db.PricingModels.SingleOrDefaultAsync(pm => pm.Id == id);
+        }
+
         public async Task<PricingModel> GetPricingModelByDeviceIdAsync(Int32 deviceID)
         {
             PricingModel ret = null;

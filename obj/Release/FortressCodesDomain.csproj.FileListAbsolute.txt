@@ -40,3 +40,13 @@ D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Release\FortressCodesDoma
 D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Release\FortressCodesDomain.pdb
 D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\EntityFramework.xml
 D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\EntityFramework.SqlServer.xml
+J:\Development\Fortress\fcd\bin\Release\FortressCodesDomain.dll.config
+J:\Development\Fortress\fcd\bin\Release\FortressCodesDomain.dll
+J:\Development\Fortress\fcd\bin\Release\FortressCodesDomain.pdb
+J:\Development\Fortress\fcd\bin\Release\Newtonsoft.Json.dll
+J:\Development\Fortress\fcd\bin\Release\EntityFramework.xml
+J:\Development\Fortress\fcd\bin\Release\EntityFramework.SqlServer.xml
+J:\Development\Fortress\fcd\bin\Release\Newtonsoft.Json.xml
+J:\Development\Fortress\fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
+J:\Development\Fortress\fcd\obj\Release\FortressCodesDomain.dll
+J:\Development\Fortress\fcd\obj\Release\FortressCodesDomain.pdb

@@ -43,7 +43,7 @@
       <HintPath>..\..\FortressVoucherSystem\fortressvouchers\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\fortresscodesapi\FortressCodesApi\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\fortressapi\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -77,6 +77,7 @@
     <Compile Include="DbModels\PartnerChannel.cs" />
     <Compile Include="DbModels\PricingModel.cs" />
     <Compile Include="DbModels\Status.cs" />
+    <Compile Include="DbModels\tbl_PreloadedDevices.cs" />
     <Compile Include="DbModels\Tier.cs" />
     <Compile Include="DbModels\Transaction.cs" />
     <Compile Include="DbModels\TransactionType.cs" />
