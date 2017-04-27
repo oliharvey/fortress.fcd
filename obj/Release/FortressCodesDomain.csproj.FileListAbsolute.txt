@@ -40,3 +40,5 @@ D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Release\FortressCodesDoma
 D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Release\FortressCodesDomain.pdb
 D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\EntityFramework.xml
 D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\EntityFramework.SqlServer.xml
+D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\Newtonsoft.Json.dll
+D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\Newtonsoft.Json.xml
