@@ -35,8 +35,8 @@ J:\Development\Fortress\Working\fcd\obj\Release\FortressCodesDomain.csprojResolv
 D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\FortressCodesDomain.dll.config
 D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\FortressCodesDomain.dll
 D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\FortressCodesDomain.pdb
+D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
 D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Release\FortressCodesDomain.dll
 D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Release\FortressCodesDomain.pdb
-D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\Newtonsoft.Json.dll
-D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\Newtonsoft.Json.xml
-D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
+D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\EntityFramework.xml
+D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\EntityFramework.SqlServer.xml
