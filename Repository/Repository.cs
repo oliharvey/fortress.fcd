@@ -153,7 +153,10 @@ namespace FortressCodesDomain.Repository
         {
             return await db.PricingModels.Where(pm => pm.FamilyId == familyId && pm.LevelId == deviceLevelID).ToListAsync();
         }
-
+        public async Task<PricingModel> GetPricingModelByIdAsync(Int32 id)
+        {
+            return await db.PricingModels.SingleOrDefaultAsync(pm => pm.Id == id);
+        }
         public async Task<PricingModel> GetPricingModelByDeviceIdAsync(Int32 deviceID)
         {
             PricingModel ret = null;
@@ -217,7 +220,10 @@ namespace FortressCodesDomain.Repository
             return new Tuple<Device, bool>(fcdDevice, bIsDeviceMissing);
         }
 
-
+        public async Task<tbl_PreloadedDevice> GetPreloadedDeviceByImei(string imei)
+        {
+            return await db.tbl_PreloadedDevices.SingleOrDefaultAsync(d => d.Imei == imei);
+        }
         public async Task<Tuple<Boolean, String>> GetDeviceLevelAsync(String make, String model, String capacity,
                                                                       String voucherCode, String countryIso)
         {

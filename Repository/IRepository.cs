@@ -26,11 +26,14 @@ namespace FortressCodesDomain.Repository
                                                                                                   String capacity,
                                                                                                   String model,
                                                                                                   String countryIso);
+
+        Task<tbl_PreloadedDevice> GetPreloadedDeviceByImei(string imei);
         Task<Tuple<Boolean, String>> GetDeviceLevelAsync(String make, String model, String capacity, String voucherCode, String countryIso);
         Task<PricingModel> GetPricingModelByDevicePartnerFamilyAsync(string deviceLevel, Int32 tierId, Int32 familyId);
         Task<PricingModel> GetActivePricingModelByDevicePartnerFamilyAsync(String deviceLevel, Int32 tierId, Int32 familyId);
 
         Task<IEnumerable<PricingModel>> GetActivePricingModelByFamilyAsync(Int32 familyId);
+        Task<PricingModel> GetPricingModelByIdAsync(Int32 id);
 
         Task<Boolean> AddAsync<T>(T entity) where T : class;
         Task<Boolean> DeleteAsync<T>(T entity) where T : class;
