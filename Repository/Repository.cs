@@ -157,6 +157,7 @@ namespace FortressCodesDomain.Repository
         {
             return await db.PricingModels.SingleOrDefaultAsync(pm => pm.Id == id);
         }
+
         public async Task<PricingModel> GetPricingModelByDeviceIdAsync(Int32 deviceID)
         {
             PricingModel ret = null;

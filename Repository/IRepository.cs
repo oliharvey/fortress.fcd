@@ -19,6 +19,7 @@ namespace FortressCodesDomain.Repository
         Task<DeviceLevel> GetDeviceLevelByFormattedDeviceNameAsync(String formattedDeviceName, String userDeviceCountryIso, PricingModel pricingModel);
         Task<PricingModel> GetPricingModelByVoucherCodeAsync(String voucherCode);
         Task<PricingModel> GetPricingModelByDeviceIdAsync(Int32 deviceID);
+        Task<PricingModel> GetPricingModelByIdAsync(Int32 id);
         Task<IEnumerable<PricingModel>> GetPricingModelsByFamilyIdAsync(Int32 familyId, Int32 deviceLevelID);
         Task<Device> GetDeviceByFormattedDeviceNameAsync(String formattedDeviceName);
         Task<Device> GetDeviceByMakeModelCapacityAsync(String make, String model, String capacity);
@@ -34,6 +35,7 @@ namespace FortressCodesDomain.Repository
 
         Task<IEnumerable<PricingModel>> GetActivePricingModelByFamilyAsync(Int32 familyId);
         Task<PricingModel> GetPricingModelByIdAsync(Int32 id);
+
 
         Task<Boolean> AddAsync<T>(T entity) where T : class;
         Task<Boolean> DeleteAsync<T>(T entity) where T : class;
