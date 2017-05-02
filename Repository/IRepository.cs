@@ -34,7 +34,6 @@ namespace FortressCodesDomain.Repository
         Task<PricingModel> GetActivePricingModelByDevicePartnerFamilyAsync(String deviceLevel, Int32 tierId, Int32 familyId);
 
         Task<IEnumerable<PricingModel>> GetActivePricingModelByFamilyAsync(Int32 familyId);
-        Task<PricingModel> GetPricingModelByIdAsync(Int32 id);
 
 
         Task<Boolean> AddAsync<T>(T entity) where T : class;
