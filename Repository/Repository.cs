@@ -221,9 +221,31 @@ namespace FortressCodesDomain.Repository
             return new Tuple<Device, bool>(fcdDevice, bIsDeviceMissing);
         }
 
-        public async Task<tbl_PreloadedDevice> GetPreloadedDeviceByImei(string imei)
+        public async Task<tbl_PreloadedDevice> GetPreloadedDeviceByImei(string imei, string countryISO)
         {
-            return await db.tbl_PreloadedDevices.SingleOrDefaultAsync(d => d.Imei == imei);
+            tbl_PreloadedDevice dev;
+            bool deviceFound = false;
+            dev =  await db.tbl_PreloadedDevices.SingleOrDefaultAsync(d => d.Imei == imei);
+            if (dev != null)
+            {
+                if (dev.Voucher != null)
+                {
+                    VoucherMetadata vmd = dev.Voucher.VoucherMetadatas.SingleOrDefault();
+                    if (vmd != null)
+                    {
+                        PricingModel pm = vmd.PricingModel;
+                        if (pm.Country != null)
+                        {
+                            if (pm.Country.ISO == countryISO)
+                                deviceFound = true;
+                        }
+                    }
+                }
+            }
+            if (!deviceFound)
+                dev = null;
+
+            return dev;
         }
         public async Task<Tuple<Boolean, String>> GetDeviceLevelAsync(String make, String model, String capacity,
                                                                       String voucherCode, String countryIso)

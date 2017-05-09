@@ -24,6 +24,7 @@ namespace FortressCodesDomain.DbModels
         public int VoucherID { get; set; }
         public bool Activated { get; set; }
         public DateTime? ActivatedDate { get; set; }
+        public virtual Voucher Voucher { get; set; }
 
     }
 }

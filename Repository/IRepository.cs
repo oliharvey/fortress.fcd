@@ -28,7 +28,7 @@ namespace FortressCodesDomain.Repository
                                                                                                   String model,
                                                                                                   String countryIso);
 
-        Task<tbl_PreloadedDevice> GetPreloadedDeviceByImei(string imei);
+        Task<tbl_PreloadedDevice> GetPreloadedDeviceByImei(string imei, string countryISO);
         Task<Tuple<Boolean, String>> GetDeviceLevelAsync(String make, String model, String capacity, String voucherCode, String countryIso);
         Task<PricingModel> GetPricingModelByDevicePartnerFamilyAsync(string deviceLevel, Int32 tierId, Int32 familyId);
         Task<PricingModel> GetActivePricingModelByDevicePartnerFamilyAsync(String deviceLevel, Int32 tierId, Int32 familyId);
