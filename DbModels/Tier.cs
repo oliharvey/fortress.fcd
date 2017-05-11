@@ -21,6 +21,8 @@ namespace FortressCodesDomain.DbModels
 
         public int? PartnerId { get; set; }
 
+        public int? TierLevel { get; set; }
+
         public bool? Protected { get; set; }
 
         public virtual Partner Partner { get; set; }
