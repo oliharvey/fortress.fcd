@@ -21,6 +21,7 @@ namespace FortressCodesDomain.Repository
         Task<PricingModel> GetPricingModelByDeviceIdAsync(Int32 deviceID);
         Task<PricingModel> GetPricingModelByIdAsync(Int32 id);
         Task<IEnumerable<PricingModel>> GetPricingModelsByFamilyIdAsync(Int32 familyId, Int32 deviceLevelID);
+        Task<IEnumerable<PricingModel>> GetPricingModelsByFamilyIdTierAsync(Int32 familyId, Int32 deviceLevelID, Tier tierValue);
         Task<Device> GetDeviceByFormattedDeviceNameAsync(String formattedDeviceName);
         Task<Device> GetDeviceByMakeModelCapacityAsync(String make, String model, String capacity);
         Task<Tuple<FortressCodesDomain.DbModels.Device, Boolean>> GetDBDeviceOrUnknownDeviceAsync(String make,

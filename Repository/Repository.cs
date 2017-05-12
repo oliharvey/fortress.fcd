@@ -153,6 +153,18 @@ namespace FortressCodesDomain.Repository
         {
             return await db.PricingModels.Where(pm => pm.FamilyId == familyId && pm.LevelId == deviceLevelID).ToListAsync();
         }
+        public async Task<IEnumerable<PricingModel>> GetPricingModelsByFamilyIdTierAsync(Int32 familyId, Int32 deviceLevelID, Tier tier)
+        {
+            //return await db.PricingModels.Where(pm => pm.FamilyId == familyId && pm.LevelId == deviceLevelID).ToListAsync();
+
+            
+            var pms = await (from pm in db.PricingModels
+                       join t in db.Tiers on pm.Tier.Id equals t.Id
+                       where pm.FamilyId == familyId && pm.LevelId == deviceLevelID && (t.TierLevel > tier.TierLevel || tier.Name.ToLower()=="ultimate" && (t.TierLevel >= tier.TierLevel || t.Name.ToLower() == "ultimate"))
+                       select pm)
+              .ToListAsync();
+            return pms;
+        }
         public async Task<PricingModel> GetPricingModelByIdAsync(Int32 id)
         {
             return await db.PricingModels.SingleOrDefaultAsync(pm => pm.Id == id);
@@ -225,7 +237,7 @@ namespace FortressCodesDomain.Repository
         {
             tbl_PreloadedDevice dev;
             bool deviceFound = false;
-            dev =  await db.tbl_PreloadedDevices.SingleOrDefaultAsync(d => d.Imei == imei);
+            dev = await db.tbl_PreloadedDevices.SingleOrDefaultAsync(d => d.Imei == imei);
             if (dev != null)
             {
                 if (dev.Voucher != null)
