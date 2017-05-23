@@ -21,10 +21,9 @@ namespace FortressCodesDomain.DbModels
         [StringLength(50)]
         public string Imei { get; set; }
         [Required]
-        public int VoucherID { get; set; }
+        public string VoucherID { get; set; }
         public bool Activated { get; set; }
         public DateTime? ActivatedDate { get; set; }
-        public virtual Voucher Voucher { get; set; }
 
     }
 }
