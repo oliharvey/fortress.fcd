@@ -240,9 +240,10 @@ namespace FortressCodesDomain.Repository
             dev = await db.tbl_PreloadedDevices.SingleOrDefaultAsync(d => d.Imei == imei);
             if (dev != null)
             {
-                if (dev.Voucher != null)
+                var voucher = await db.Vouchers.SingleOrDefaultAsync(d => d.vouchercode == dev.VoucherID);
+                if (voucher != null)
                 {
-                    VoucherMetadata vmd = dev.Voucher.VoucherMetadatas.SingleOrDefault();
+                    VoucherMetadata vmd = voucher.VoucherMetadatas.SingleOrDefault();
                     if (vmd != null)
                     {
                         PricingModel pm = vmd.PricingModel;

@@ -114,10 +114,10 @@ namespace FortressCodesDomain.DbModels
                 .WithOptional(e => e.Voucher)
                 .HasForeignKey(e => e.CodeId);
 
-            modelBuilder.Entity<tbl_PreloadedDevice>()
-                .HasRequired(e => e.Voucher)
-                .WithMany(e => e.PreloadedDevices)
-                .HasForeignKey(e => e.VoucherID);
+            //modelBuilder.Entity<tbl_PreloadedDevice>()
+            //    .HasRequired(e => e.Voucher)
+            //    .WithMany(e => e.PreloadedDevices)
+            //    .HasForeignKey(e => e.VoucherID);
         }
     }
 }
