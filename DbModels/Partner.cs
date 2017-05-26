@@ -26,6 +26,10 @@ namespace FortressCodesDomain.DbModels
 
         public bool? BillingAllowed { get; set; }
 
+        public bool? AnnualBillingAllowed { get; set; }
+
+        public bool? MonthlyBillingAllowed { get; set; }
+
         public virtual Country Country { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
