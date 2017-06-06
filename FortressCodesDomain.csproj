@@ -77,6 +77,7 @@
     <Compile Include="DbModels\PartnerChannel.cs" />
     <Compile Include="DbModels\PricingModel.cs" />
     <Compile Include="DbModels\Status.cs" />
+    <Compile Include="DbModels\tbl_PreloadedDevices.cs" />
     <Compile Include="DbModels\Tier.cs" />
     <Compile Include="DbModels\Transaction.cs" />
     <Compile Include="DbModels\TransactionType.cs" />
@@ -90,7 +91,9 @@
     <Compile Include="Repository\Repository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

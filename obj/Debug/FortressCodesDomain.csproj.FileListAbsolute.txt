@@ -37,3 +37,9 @@ J:\Development\Fortress\fcd\bin\Debug\Newtonsoft.Json.xml
 J:\Development\Fortress\fcd\obj\Debug\FortressCodesDomain.dll
 J:\Development\Fortress\fcd\obj\Debug\FortressCodesDomain.pdb
 J:\Development\Fortress\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
+D:\fcd\bin\Debug\FortressCodesDomain.dll.config
+D:\fcd\bin\Debug\FortressCodesDomain.dll
+D:\fcd\bin\Debug\FortressCodesDomain.pdb
+D:\fcd\obj\Debug\FortressCodesDomain.dll
+D:\fcd\obj\Debug\FortressCodesDomain.pdb
+D:\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
