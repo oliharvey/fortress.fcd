@@ -158,21 +158,12 @@ namespace FortressCodesDomain.Repository
             //return await db.PricingModels.Where(pm => pm.FamilyId == familyId && pm.LevelId == deviceLevelID).ToListAsync();
 
             
-            //var pms = await (from pm in db.PricingModels
-            //           join t in db.Tiers on pm.Tier.Id equals t.Id
-            //           where pm.FamilyId == familyId && pm.LevelId == deviceLevelID 
-            //           && (t.TierLevel >= tier.TierLevel || tier.Name.ToLower()=="ultimate" 
-            //           && (t.TierLevel >= tier.TierLevel || t.Name.ToLower() == "ultimate"))
-            //           select pm)
-            //  .ToListAsync();
-
             var pms = await (from pm in db.PricingModels
-                             join t in db.Tiers on pm.Tier.Id equals t.Id
-                             where pm.FamilyId == familyId && pm.LevelId == deviceLevelID
-                             && (t.TierLevel >= tier.TierLevel || t.Name.ToLower() == "ultimate")
+                       join t in db.Tiers on pm.Tier.Id equals t.Id
+                             //where pm.FamilyId == familyId && pm.LevelId == deviceLevelID && (t.TierLevel > tier.TierLevel || tier.Name.ToLower()=="ultimate" && (t.TierLevel >= tier.TierLevel || t.Name.ToLower() == "ultimate"))
+                             where pm.FamilyId == familyId && pm.LevelId == deviceLevelID && (t.TierLevel >= tier.TierLevel)
                              select pm)
               .ToListAsync();
-
             return pms;
         }
         public async Task<PricingModel> GetPricingModelByIdAsync(Int32 id)
