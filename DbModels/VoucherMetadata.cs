@@ -16,6 +16,9 @@ namespace FortressCodesDomain.DbModels
         public int? VoucherID { get; set; }
 
         public int? VoucherTypeID { get; set; }
+        public int? FreeDays { get; set; }
+        public int? PaymentSource { get; set; }
+        public bool? TransferToBasic { get; set; }
 
         public virtual PricingModel PricingModel { get; set; }
 
