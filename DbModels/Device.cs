@@ -37,6 +37,12 @@ namespace FortressCodesDomain.DbModels
 
         public int? PartnerID { get; set; }
 
+        public decimal? DeviceValueUSD { get; set; }
+
+        public decimal? DeviceValueGBP { get; set; }
+
+        public decimal? DeviceValueEUR { get; set; }
+
         public virtual Country Country { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

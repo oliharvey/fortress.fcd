@@ -15,6 +15,12 @@ namespace FortressCodesDomain.DbModels
 
         public bool? Protected { get; set; }
 
+        public decimal? DeviceValueUSD { get; set; }
+
+        public decimal? DeviceValueGBP { get; set; }
+
+        public decimal? DeviceValueEUR { get; set; }
+
         public virtual Device Device { get; set; }
 
         public virtual Partner Partner { get; set; }
