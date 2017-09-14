@@ -100,6 +100,24 @@ namespace FortressCodesDomain.Repository
                                                          t.TransactionTypeId == validatedTransactionTypeId);
         }
 
+        public async Task<string> GetPlanNameFromPricingModel(int pricingModelID, int billingCycle)
+        {
+
+
+            var dbContext = new FortressCodeContext();
+            PricingModel pm = await db.PricingModels.Where(pms => pms.Id == pricingModelID).SingleOrDefaultAsync();
+            Tier tier = db.Tiers.Where(tie => tie.Id == pm.TeirId).SingleOrDefault();
+            Partner partner = db.Partners.Where(part => part.userid == pm.PartnerId).SingleOrDefault();
+            string planName = "";
+            planName = string.Format("{0} - {1} - {2}", partner != null ? partner.partnername : "Fortress", tier != null ? tier.Name : "Basic", (billingCycle == 0 ? "Monthly" : "Annual"));
+
+
+            return planName;
+        }
+
+
+
+
         public async Task<int> GetCodeUsageCountAsync(int codeId, int activatedTransactionTypeId)
         {
             return await db.Transactions.CountAsync(t => t.CodeId == codeId && t.TransactionTypeId == activatedTransactionTypeId);
@@ -157,9 +175,9 @@ namespace FortressCodesDomain.Repository
         {
             //return await db.PricingModels.Where(pm => pm.FamilyId == familyId && pm.LevelId == deviceLevelID).ToListAsync();
 
-            
+
             var pms = await (from pm in db.PricingModels
-                       join t in db.Tiers on pm.Tier.Id equals t.Id
+                             join t in db.Tiers on pm.Tier.Id equals t.Id
                              //where pm.FamilyId == familyId && pm.LevelId == deviceLevelID && (t.TierLevel > tier.TierLevel || tier.Name.ToLower()=="ultimate" && (t.TierLevel >= tier.TierLevel || t.Name.ToLower() == "ultimate"))
                              where pm.FamilyId == familyId && pm.LevelId == deviceLevelID && (t.TierLevel >= tier.TierLevel)
                              select pm)
