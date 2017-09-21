@@ -37,3 +37,16 @@ J:\Development\Fortress\fcd\bin\Debug\Newtonsoft.Json.xml
 J:\Development\Fortress\fcd\obj\Debug\FortressCodesDomain.dll
 J:\Development\Fortress\fcd\obj\Debug\FortressCodesDomain.pdb
 J:\Development\Fortress\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
+D:\Fortress Rollback\fcd\obj\Debug\FortressCodesDomain.dll
+D:\Fortress Rollback\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
+D:\Fortress Rollback\fcd\bin\Debug\FortressCodesDomain.dll.config
+D:\Fortress Rollback\fcd\bin\Debug\FortressCodesDomain.dll
+D:\Fortress Rollback\fcd\bin\Debug\FortressCodesDomain.pdb
+D:\Fortress Rollback\fcd\obj\Debug\FortressCodesDomain.pdb
+D:\Fortress Rollback\fcd\obj\Debug\FortressCodesDomain.csproj.CoreCompileInputs.cache
+D:\Fortress Rollback\fcd\bin\Debug\EntityFramework.dll
+D:\Fortress Rollback\fcd\bin\Debug\EntityFramework.SqlServer.dll
+D:\Fortress Rollback\fcd\bin\Debug\Newtonsoft.Json.dll
+D:\Fortress Rollback\fcd\bin\Debug\EntityFramework.xml
+D:\Fortress Rollback\fcd\bin\Debug\EntityFramework.SqlServer.xml
+D:\Fortress Rollback\fcd\bin\Debug\Newtonsoft.Json.xml

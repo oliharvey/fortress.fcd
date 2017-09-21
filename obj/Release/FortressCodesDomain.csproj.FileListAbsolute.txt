@@ -40,3 +40,11 @@ D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Release\FortressCodesDoma
 D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Release\FortressCodesDomain.pdb
 D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\EntityFramework.xml
 D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Release\EntityFramework.SqlServer.xml
+D:\Fortress Rollback\fcd\bin\Release\FortressCodesDomain.dll.config
+D:\Fortress Rollback\fcd\bin\Release\FortressCodesDomain.dll
+D:\Fortress Rollback\fcd\bin\Release\FortressCodesDomain.pdb
+D:\Fortress Rollback\fcd\bin\Release\EntityFramework.xml
+D:\Fortress Rollback\fcd\bin\Release\EntityFramework.SqlServer.xml
+D:\Fortress Rollback\fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
+D:\Fortress Rollback\fcd\obj\Release\FortressCodesDomain.dll
+D:\Fortress Rollback\fcd\obj\Release\FortressCodesDomain.pdb
