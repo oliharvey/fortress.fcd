@@ -23,6 +23,9 @@ namespace FortressCodesDomain.DbModels
 
         public bool? Protected { get; set; }
 
+        public int? TierLevel { get; set; }
+        
+
         public virtual Partner Partner { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
