@@ -94,7 +94,7 @@ namespace FortressCodesDomain.Repository
 
         public async Task<int> GetCodeAttemptsInTimeLimitAsync(int codeId, int timeLimit, int validatedTransactionTypeId)
         {
-            DateTime dateTime15MinsAgo = DateTime.Now.AddMinutes(-timeLimit);
+            DateTime dateTime15MinsAgo = DateTime.UtcNow.AddMinutes(-timeLimit);
             return await db.Transactions.CountAsync(t => t.CodeId == codeId &&
                                                          t.Date > dateTime15MinsAgo &&
                                                          t.TransactionTypeId == validatedTransactionTypeId);
