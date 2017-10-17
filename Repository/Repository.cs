@@ -109,7 +109,7 @@ namespace FortressCodesDomain.Repository
             Tier tier = db.Tiers.Where(tie => tie.Id == pm.TeirId).SingleOrDefault();
             Partner partner = db.Partners.Where(part => part.userid == pm.PartnerId).SingleOrDefault();
             string planName = "";
-            planName = string.Format("{0} - {1} - {2}", partner != null ? partner.partnername : "Fortress", tier != null ? tier.Name : "Basic", (billingCycle == 0 ? "Monthly" : "Annual"));
+            planName = string.Format("{0} - {1} - {2}", partner != null ? partner.partnername : "Fortress", tier != null ? tier.Name : "Basic", (billingCycle == 0 ? "(Monthly)" : "(Annual)"));
 
 
             return planName;
