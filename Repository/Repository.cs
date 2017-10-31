@@ -40,6 +40,10 @@ namespace FortressCodesDomain.Repository
         {
             return await db.Vouchers.Include("TransactionType").FirstOrDefaultAsync(v => v.vouchercode == code);
         }
+        public Voucher GetCode(string code)
+        {
+            return db.Vouchers.Include("TransactionType").FirstOrDefault(v => v.vouchercode == code);
+        }
 
         public async Task<Voucher> GetCodeByIdAsync(int codeid)
         {

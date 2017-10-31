@@ -10,6 +10,7 @@ namespace FortressCodesDomain.Repository
     public interface IRepository
     {
         Task<Voucher> GetCodeAsync(string code);
+        Voucher GetCode(string code);
         Task<int> AddTransactionAsync(Transaction entity);
         Task<List<TransactionType>> GetAllTransactionTypesAsync();
         Task<TransactionType> GetTransactionTypeIdAsync(string transactionType);
