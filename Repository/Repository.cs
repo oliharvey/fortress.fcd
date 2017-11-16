@@ -118,7 +118,20 @@ namespace FortressCodesDomain.Repository
 
             return planName;
         }
+        public string GetPlanNameFromPricingModelNonAsync(int pricingModelID, int billingCycle)
+        {
 
+
+            var dbContext = new FortressCodeContext();
+            PricingModel pm = db.PricingModels.Where(pms => pms.Id == pricingModelID).SingleOrDefault();
+            Tier tier = db.Tiers.Where(tie => tie.Id == pm.TeirId).SingleOrDefault();
+            Partner partner = db.Partners.Where(part => part.userid == pm.PartnerId).SingleOrDefault();
+            string planName = "";
+            planName = string.Format("{0} - {1} - {2}", partner != null ? partner.partnername : "Fortress", tier != null ? tier.Name : "Basic", (billingCycle == 0 ? "(Monthly)" : "(Annual)"));
+
+
+            return planName;
+        }
 
 
 
@@ -186,6 +199,16 @@ namespace FortressCodesDomain.Repository
                              join t in db.Tiers on pm.Tier.Id equals t.Id
                              //where pm.FamilyId == familyId && pm.LevelId == deviceLevelID && (t.TierLevel > tier.TierLevel || (tier.Name.ToLower()=="ultimate" && (t.TierLevel >= tier.TierLevel || t.Name.ToLower() == "ultimate")))
                              where pm.FamilyId == familyId && pm.LevelId == deviceLevelID && (t.TierLevel >= tier.TierLevel)
+                             select pm)
+              .ToListAsync();
+            return pms;
+        }
+        public async Task<IEnumerable<PricingModel>> GetPricingModelsByFamilyIdTierSubUpgradeAsync(Int32 familyId, Int32 deviceLevelID, Tier tier)
+        {
+            //new method to facilitate providing an upgrade to recurring subscription customers. Return only 
+            var pms = await (from pm in db.PricingModels
+                             join t in db.Tiers on pm.Tier.Id equals t.Id
+                             where pm.FamilyId == familyId && pm.LevelId == deviceLevelID && (t.TierLevel > tier.TierLevel)
                              select pm)
               .ToListAsync();
             return pms;

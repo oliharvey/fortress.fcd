@@ -23,6 +23,9 @@ namespace FortressCodesDomain.Repository
         Task<PricingModel> GetPricingModelByIdAsync(Int32 id);
         Task<IEnumerable<PricingModel>> GetPricingModelsByFamilyIdAsync(Int32 familyId, Int32 deviceLevelID);
         Task<IEnumerable<PricingModel>> GetPricingModelsByFamilyIdTierAsync(Int32 familyId, Int32 deviceLevelID, Tier tierValue);
+        Task<IEnumerable<PricingModel>> GetPricingModelsByFamilyIdTierSubUpgradeAsync(Int32 familyId, Int32 deviceLevelID, Tier tierValue);
+
+        
         Task<Device> GetDeviceByFormattedDeviceNameAsync(String formattedDeviceName);
         Task<Device> GetDeviceByMakeModelCapacityAsync(String make, String model, String capacity);
         Task<Tuple<FortressCodesDomain.DbModels.Device, Boolean>> GetDBDeviceOrUnknownDeviceAsync(String make,
@@ -37,7 +40,7 @@ namespace FortressCodesDomain.Repository
 
         Task<IEnumerable<PricingModel>> GetActivePricingModelByFamilyAsync(Int32 familyId);
         Task<string> GetPlanNameFromPricingModel(int pricingModelID, int billingCycle);
-
+        string GetPlanNameFromPricingModelNonAsync(int pricingModelID, int billingCycle);
         Task<Boolean> AddAsync<T>(T entity) where T : class;
         Task<Boolean> DeleteAsync<T>(T entity) where T : class;
         Task<Boolean> UpdateAsync<T>(T entity) where T : class;
