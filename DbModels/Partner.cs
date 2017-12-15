@@ -30,6 +30,16 @@ namespace FortressCodesDomain.DbModels
 
         public bool? MonthlyBillingAllowed { get; set; }
 
+        public bool? AceAllowed { get; set; }
+
+        public int? API_DefaultVoucherFamily { get; set; }
+
+        public string API_DES_EncryptionKey { get; set; }
+
+        public string API_DES_IV { get; set; }
+
+        public string SecretKey { get; set; }
+
         public virtual Country Country { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
