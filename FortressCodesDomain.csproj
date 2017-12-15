@@ -77,7 +77,9 @@
     <Compile Include="DbModels\PartnerChannel.cs" />
     <Compile Include="DbModels\PricingModel.cs" />
     <Compile Include="DbModels\Status.cs" />
+    <Compile Include="DbModels\tbl_DeviceValueAudit.cs" />
     <Compile Include="DbModels\tbl_PreloadedDevices.cs" />
+    <Compile Include="DbModels\tbl_profanity.cs" />
     <Compile Include="DbModels\Tier.cs" />
     <Compile Include="DbModels\Transaction.cs" />
     <Compile Include="DbModels\TransactionType.cs" />

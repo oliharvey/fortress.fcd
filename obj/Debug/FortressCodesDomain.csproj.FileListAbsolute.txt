@@ -43,3 +43,10 @@ D:\fcd\bin\Debug\FortressCodesDomain.pdb
 D:\fcd\obj\Debug\FortressCodesDomain.dll
 D:\fcd\obj\Debug\FortressCodesDomain.pdb
 D:\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
+D:\Fortress\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
+D:\Fortress\fcd\obj\Debug\FortressCodesDomain.csproj.CoreCompileInputs.cache
+D:\Fortress\fcd\obj\Debug\FortressCodesDomain.dll
+D:\Fortress\fcd\obj\Debug\FortressCodesDomain.pdb
+D:\Fortress\fcd\bin\Debug\FortressCodesDomain.dll.config
+D:\Fortress\fcd\bin\Debug\FortressCodesDomain.dll
+D:\Fortress\fcd\bin\Debug\FortressCodesDomain.pdb
