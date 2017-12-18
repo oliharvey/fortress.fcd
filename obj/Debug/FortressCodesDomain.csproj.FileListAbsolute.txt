@@ -54,3 +54,4 @@ D:\Fortress\fcd\bin\Debug\FortressCodesDomain.pdb
 D:\Fortress\fcd\bin\Debug\Newtonsoft.Json.dll
 D:\Fortress\fcd\bin\Debug\Newtonsoft.Json.xml
 D:\Fortress\fcd\obj\Debug\FortressCodesDomain.pdb
+D:\Fortress\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache

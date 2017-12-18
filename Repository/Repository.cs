@@ -7,6 +7,7 @@ using System.Data.Entity.Validation;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace FortressCodesDomain.Repository
 {
@@ -236,9 +237,80 @@ namespace FortressCodesDomain.Repository
             }
             return ret;
         }
+        private static Double ExtractDoubleFromDeviceCapacityRaw(String deviceCapacityRaw)
+        {
+            Regex digitsRegex = new Regex(@"^\D*?((-?(\d+(\.\d+)?))|(-?\.\d+)).*");
+            Match mx = digitsRegex.Match(deviceCapacityRaw);
+            return mx.Success ? Convert.ToDouble(mx.Groups[1].Value) : 0;
+        }
+        public async Task<string> GetDeviceMarketingName(string DeviceModel, string rawCapacity)
+        {
+            string strMarketingName = "";
 
+            int calculateCapacity = CalculateDeviceTotalSizeFromRaw(rawCapacity);
+            string newCapacityString = calculateCapacity.ToString() + "GB";
+            
+            var deviceListing = await db.Devices.Where(p => p.model == DeviceModel && p.capacity == newCapacityString).FirstOrDefaultAsync();
 
+            if (deviceListing != null)
+            {
+                strMarketingName = deviceListing.name;
+            }
+            else
+            {
+                strMarketingName = DeviceModel;
+            }
 
+            return strMarketingName;
+
+        }
+        public static Int32 CalculateDeviceTotalSizeFromRaw(String capacityRaw)
+        {
+            Int32 ret = 0;
+            Double capacity = ExtractDoubleFromDeviceCapacityRaw(capacityRaw);
+            if (capacity < 1.00d)
+            {
+                ret = 1;
+            }
+            if (capacity >= 1.00d && capacity < 2.00d)
+            {
+                ret = 2;
+            }
+            if (capacity >= 2.00d && capacity < 4.00d)
+            {
+                ret = 4;
+            }
+            if (capacity >= 4.00d && capacity < 8.00d)
+            {
+                ret = 8;
+            }
+            if (capacity >= 8.00d && capacity < 16.00d)
+            {
+                ret = 16;
+            }
+            if (capacity >= 16.00d && capacity < 32.00d)
+            {
+                ret = 32;
+            }
+            if (capacity >= 32.00d && capacity < 64.00d)
+            {
+                ret = 64;
+            }
+            if (capacity >= 64.00d && capacity < 128.00d)
+            {
+                ret = 128;
+            }
+            if (capacity >= 128.00d && capacity < 256.00d)
+            {
+                ret = 256;
+            }
+            if (capacity >= 256.00d && capacity < 512.00d)
+            {
+                ret = 512;
+            }
+
+            return ret;
+        }
         public async Task<Device> GetDeviceByFormattedDeviceNameAsync(String formattedDeviceName)
         {
             return await db.Devices.SingleOrDefaultAsync(d => d.name == formattedDeviceName.ToLower());
