@@ -25,5 +25,7 @@ namespace FortressCodesDomain.DbModels
         public virtual Voucher Voucher { get; set; }
 
         public virtual VoucherType VoucherType { get; set; }
+
+        public Boolean? TestAccount { get; set; } 
     }
 }
