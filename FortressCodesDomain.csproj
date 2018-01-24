@@ -87,6 +87,7 @@
     <Compile Include="DbModels\VoucherMetadata.cs" />
     <Compile Include="DbModels\VoucherType.cs" />
     <Compile Include="Enumerations\Enumerations.cs" />
+    <Compile Include="Helpers\CodesHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\Repository.cs" />

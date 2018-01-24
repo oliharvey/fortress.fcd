@@ -32,6 +32,14 @@ namespace FortressCodesDomain.DbModels
 
         public virtual Country Country { get; set; }
 
+        public string API_DES_EncryptionKey { get; set; }
+
+        public string API_DES_IV { get; set; }
+
+        public string SecretKey { get; set; }
+
+        public int? API_DefaultVoucherFamily { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DeviceLevel> DeviceLevels { get; set; }
 
