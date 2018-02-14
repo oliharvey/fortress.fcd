@@ -1,56 +1,9 @@
-C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Debug\FortressCodesDomain.dll.config
-C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Debug\FortressCodesDomain.dll
-C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Debug\FortressCodesDomain.pdb
-C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Debug\EntityFramework.dll
-C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Debug\EntityFramework.SqlServer.dll
-C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Debug\EntityFramework.xml
-C:\Development\Fortress Projects\Fortress\FortressCodesDomain\bin\Debug\EntityFramework.SqlServer.xml
-C:\Development\Fortress Projects\Fortress\FortressCodesDomain\obj\Debug\FortressCodesDomain.dll
-C:\Development\Fortress Projects\Fortress\FortressCodesDomain\obj\Debug\FortressCodesDomain.pdb
-J:\Development\Fortress\New Fortress\fcd\bin\Debug\FortressCodesDomain.dll.config
-J:\Development\Fortress\New Fortress\fcd\bin\Debug\FortressCodesDomain.dll
-J:\Development\Fortress\New Fortress\fcd\bin\Debug\FortressCodesDomain.pdb
-J:\Development\Fortress\New Fortress\fcd\obj\Debug\FortressCodesDomain.dll
-J:\Development\Fortress\New Fortress\fcd\obj\Debug\FortressCodesDomain.pdb
-J:\Development\Fortress\27-06-2016\fcd\bin\Debug\FortressCodesDomain.dll.config
-J:\Development\Fortress\27-06-2016\fcd\bin\Debug\FortressCodesDomain.dll
-J:\Development\Fortress\27-06-2016\fcd\bin\Debug\FortressCodesDomain.pdb
-J:\Development\Fortress\27-06-2016\fcd\obj\Debug\FortressCodesDomain.dll
-J:\Development\Fortress\27-06-2016\fcd\obj\Debug\FortressCodesDomain.pdb
-J:\Development\Fortress\Working\fcd\bin\Debug\FortressCodesDomain.dll.config
-J:\Development\Fortress\Working\fcd\bin\Debug\FortressCodesDomain.dll
-J:\Development\Fortress\Working\fcd\bin\Debug\FortressCodesDomain.pdb
-J:\Development\Fortress\Working\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
-J:\Development\Fortress\Working\fcd\obj\Debug\FortressCodesDomain.dll
-J:\Development\Fortress\Working\fcd\obj\Debug\FortressCodesDomain.pdb
-D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Debug\FortressCodesDomain.dll.config
-D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Debug\FortressCodesDomain.dll
-D:\Development\FortressDev\FortressCodesDomain\fcd\bin\Debug\FortressCodesDomain.pdb
-D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
-D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Debug\FortressCodesDomain.dll
-D:\Development\FortressDev\FortressCodesDomain\fcd\obj\Debug\FortressCodesDomain.pdb
-J:\Development\Fortress\fcd\bin\Debug\FortressCodesDomain.dll.config
-J:\Development\Fortress\fcd\bin\Debug\FortressCodesDomain.dll
-J:\Development\Fortress\fcd\bin\Debug\FortressCodesDomain.pdb
-J:\Development\Fortress\fcd\bin\Debug\Newtonsoft.Json.dll
-J:\Development\Fortress\fcd\bin\Debug\Newtonsoft.Json.xml
-J:\Development\Fortress\fcd\obj\Debug\FortressCodesDomain.dll
-J:\Development\Fortress\fcd\obj\Debug\FortressCodesDomain.pdb
-J:\Development\Fortress\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
-D:\fcd\obj\Debug\FortressCodesDomain.dll
-D:\fcd\obj\Debug\FortressCodesDomain.csproj.CoreCompileInputs.cache
-D:\fcd\bin\Debug\FortressCodesDomain.dll.config
-D:\fcd\bin\Debug\FortressCodesDomain.dll
-D:\fcd\bin\Debug\FortressCodesDomain.pdb
-D:\fcd\bin\Debug\Newtonsoft.Json.dll
-D:\fcd\bin\Debug\Newtonsoft.Json.xml
-D:\fcd\obj\Debug\FortressCodesDomain.pdb
-D:\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
-D:\Fortress\fcd\obj\Debug\FortressCodesDomain.dll
-D:\Fortress\fcd\obj\Debug\FortressCodesDomain.csproj.CoreCompileInputs.cache
 D:\Fortress\fcd\bin\Debug\FortressCodesDomain.dll.config
 D:\Fortress\fcd\bin\Debug\FortressCodesDomain.dll
 D:\Fortress\fcd\bin\Debug\FortressCodesDomain.pdb
 D:\Fortress\fcd\bin\Debug\Newtonsoft.Json.dll
 D:\Fortress\fcd\bin\Debug\Newtonsoft.Json.xml
+D:\Fortress\fcd\obj\Debug\FortressCodesDomain.csproj.CoreCompileInputs.cache
+D:\Fortress\fcd\obj\Debug\FortressCodesDomain.dll
 D:\Fortress\fcd\obj\Debug\FortressCodesDomain.pdb
+D:\Fortress\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache

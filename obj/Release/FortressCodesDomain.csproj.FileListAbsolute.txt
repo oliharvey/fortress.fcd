@@ -56,7 +56,7 @@ D:\Fortress\fcd\bin\Release\FortressCodesDomain.dll
 D:\Fortress\fcd\bin\Release\FortressCodesDomain.pdb
 D:\Fortress\fcd\bin\Release\Newtonsoft.Json.dll
 D:\Fortress\fcd\bin\Release\Newtonsoft.Json.xml
-D:\Fortress\fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
 D:\Fortress\fcd\obj\Release\FortressCodesDomain.csproj.CoreCompileInputs.cache
 D:\Fortress\fcd\obj\Release\FortressCodesDomain.dll
 D:\Fortress\fcd\obj\Release\FortressCodesDomain.pdb
+D:\Fortress\fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
