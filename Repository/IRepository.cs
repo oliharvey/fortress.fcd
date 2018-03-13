@@ -24,18 +24,30 @@ namespace FortressCodesDomain.Repository
         Task<IEnumerable<PricingModel>> GetPricingModelsByFamilyIdAsync(Int32 familyId, Int32 deviceLevelID);
         Task<IEnumerable<PricingModel>> GetPricingModelsByFamilyIdTierAsync(Int32 familyId, Int32 deviceLevelID, Tier tierValue);
         Task<IEnumerable<PricingModel>> GetPricingModelsByFamilyIdTierSubUpgradeAsync(Int32 familyId, Int32 deviceLevelID, Tier tierValue);
+        Task<PricingModel> GetPricingModelByDevicePartnerTierLevelAsync(Int32 partnerID, String deviceLevel, String tierName);
         Task<string> GetDeviceMarketingName(string DeviceModel, string rawCapacity);
 
+        Task<Tuple<bool,tbl_VoucherRegistration>> CheckIfVoucherDeviceMatchesVoucher(string voucherCode,string countryISO, string deviceMake, string deviceModel, string imei, string deviceCapacity);
 
         Task<Device> GetDeviceByFormattedDeviceNameAsync(String formattedDeviceName);
         Task<Device> GetDeviceByMakeModelCapacityAsync(String make, String model, String capacity);
+        Device GetDeviceByMakeModelCapacity(String make, String model, String capacity);
         Task<Tuple<FortressCodesDomain.DbModels.Device, Boolean>> GetDBDeviceOrUnknownDeviceAsync(String make,
                                                                                                   String capacity,
                                                                                                   String model,
                                                                                                   String countryIso);
-
+        Tuple<FortressCodesDomain.DbModels.Device, Boolean> GetDBDeviceOrUnknownDevice(String make,
+                                                                                                  String capacity,
+                                                                                                  String model,
+                                                                                                  String countryIso);
+        DeviceLevel GetDeviceLevelByDeviceDetails(String deviceMake, String deviceModel,
+                                                                          String deviveCapactiy, String userDeviceCountryIso,
+                                                                          PricingModel pricingModel);
+        
         Task<tbl_PreloadedDevice> GetPreloadedDeviceByImei(string imei, string countryISO);
         Task<Tuple<Boolean, String>> GetDeviceLevelAsync(String make, String model, String capacity, String voucherCode, String countryIso);
+        Tuple<Boolean, String> GetDeviceLevel(String make, String model, String capacity,
+                                                                      String voucherCode, String countryIso);
         Task<PricingModel> GetPricingModelByDevicePartnerFamilyAsync(string deviceLevel, Int32 tierId, Int32 familyId);
         Task<PricingModel> GetActivePricingModelByDevicePartnerFamilyAsync(String deviceLevel, Int32 tierId, Int32 familyId);
 
@@ -48,5 +60,11 @@ namespace FortressCodesDomain.Repository
         IQueryable<T> GetAll<T>() where T : class;
         T GetSingleOrDefault<T>(Expression<Func<T, Boolean>> predicate) where T : class;
         IQueryable<T> FindBy<T>(Expression<Func<T, Boolean>> predicate) where T : class;
+
+
+        Task<Tier> GetTierByPartnerTierAsync(Int32 partnerID, String tierName);
+        Task<Level> GetLevelByNameAsync(String levelName);
+        Task<string> GenerateVoucherCode(bool NumericVoucherOnly, int voucherlength);
+        int AddVoucherRegistration(tbl_VoucherRegistration entity);
     }
 }

@@ -56,7 +56,16 @@ namespace FortressCodesDomain.Repository
             db.Transactions.Add(entity);
             return await db.SaveChangesAsync();
         }
-
+        public int AddTransaction(Transaction entity)
+        {
+            db.Transactions.Add(entity);
+            return db.SaveChanges();
+        }
+        public int AddVoucherRegistration(tbl_VoucherRegistration entity)
+        {
+            db.tbl_VoucherRegistrations.Add(entity);
+            return db.SaveChanges();
+        }
         public async Task<List<TransactionType>> GetAllTransactionTypesAsync()
         {
             return await db.TransactionTypes.ToListAsync();
@@ -104,11 +113,33 @@ namespace FortressCodesDomain.Repository
                                                          t.Date > dateTime15MinsAgo &&
                                                          t.TransactionTypeId == validatedTransactionTypeId);
         }
+        public async Task<Tuple<bool, tbl_VoucherRegistration>> CheckIfVoucherDeviceMatchesVoucher(string voucherCode, string countryISO, string deviceMake, string deviceModel, string imei, string deviceCapacity)
+        {
+            Tuple<bool, tbl_VoucherRegistration> returnValFail = new Tuple<bool, tbl_VoucherRegistration>(false, null);
+            var voucher = await GetCodeAsync(voucherCode);
+            var calculatedStorage = CalculateDeviceTotalSizeFromRaw(deviceCapacity) + "gb";
+            if (voucher == null)
+            {
 
+                return returnValFail;
+            }
+
+
+            var vouchReg = db.tbl_VoucherRegistrations.Where(vouch => vouch.VoucherID == voucher.Id && vouch.CountryISO == countryISO && vouch.DeviceMake == deviceMake && vouch.DeviceModel == deviceModel && vouch.DeviceCapacity == deviceCapacity).SingleOrDefault();
+            if (vouchReg == null)
+            {
+                return returnValFail;
+            }
+            else
+            {
+                Tuple<bool, tbl_VoucherRegistration> returnValSuccess = new Tuple<bool, tbl_VoucherRegistration>(true, vouchReg);
+                return returnValSuccess;
+            }
+
+
+        }
         public async Task<string> GetPlanNameFromPricingModel(int pricingModelID, int billingCycle)
         {
-
-
             var dbContext = new FortressCodeContext();
             PricingModel pm = await db.PricingModels.Where(pms => pms.Id == pricingModelID).SingleOrDefaultAsync();
             Tier tier = db.Tiers.Where(tie => tie.Id == pm.TeirId).SingleOrDefault();
@@ -116,9 +147,69 @@ namespace FortressCodesDomain.Repository
             string planName = "";
             planName = string.Format("{0} - {1} - {2}", partner != null ? partner.partnername : "Fortress", tier != null ? tier.Name : "Basic", (billingCycle == 0 ? "(Monthly)" : "(Annual)"));
 
-
             return planName;
         }
+
+        public async Task<string> GenerateVoucherCode(bool NumericVoucherOnly, int voucherlength)
+        {
+            var allWords = db.tbl_Profanitys.Select(pr => pr.Profanity).Distinct();
+            var maxCanGenerate = Math.Pow(10d, voucherlength);
+
+            List<String> AllBadWords = new List<string>();
+            if (allWords.Any())
+            {
+                AllBadWords = new List<String>();
+                AllBadWords.AddRange(allWords);
+            }
+
+            int maxattempts = 100;
+            int counter = 0;
+            bool foundVoucher = false;
+            String sVoucherCode = String.Empty;
+            while (!foundVoucher && counter < maxattempts)
+            {
+                //define a voucher code
+
+
+                Boolean bExists = false;
+                Boolean bIsBadWord = false;
+                Boolean bIsDupe = false;
+
+                Random rndRandom = new Random();
+                if (NumericVoucherOnly)
+                {
+                    //choose random characters                    
+                    sVoucherCode = Helpers.CodesHelper.RandomNumericString(rndRandom, voucherlength);
+                }
+                else
+                {
+                    //choose random characters
+                    sVoucherCode = Helpers.CodesHelper.RandomAlphaString(rndRandom, voucherlength);
+                    if (AllBadWords.Any(sVoucherCode.Contains))
+                    {
+                        bIsBadWord = true;
+                    }
+                }
+
+                bIsDupe = db.Vouchers.Where(v => v.vouchercode == sVoucherCode).Any();
+                if (bExists || bIsBadWord || bIsDupe)
+                {
+                    sVoucherCode = String.Empty;
+                }
+                else
+                {
+                    foundVoucher = true;
+                }
+                counter++;
+            }
+            if (foundVoucher)
+                return sVoucherCode;
+            else
+                return "";
+
+        }
+
+
         public string GetPlanNameFromPricingModelNonAsync(int pricingModelID, int billingCycle)
         {
 
@@ -218,7 +309,14 @@ namespace FortressCodesDomain.Repository
         {
             return await db.PricingModels.SingleOrDefaultAsync(pm => pm.Id == id);
         }
-
+        public async Task<Tier> GetTierByPartnerTierAsync(Int32 partnerID, String tierName)
+        {
+            return await db.Tiers.SingleOrDefaultAsync(pm => pm.PartnerId == partnerID && pm.Name == tierName);
+        }
+        public async Task<Level> GetLevelByNameAsync(String levelName)
+        {
+            return await db.Levels.SingleOrDefaultAsync(pm => pm.Name == levelName);
+        }
         public async Task<PricingModel> GetPricingModelByDeviceIdAsync(Int32 deviceID)
         {
             PricingModel ret = null;
@@ -249,7 +347,7 @@ namespace FortressCodesDomain.Repository
 
             int calculateCapacity = CalculateDeviceTotalSizeFromRaw(rawCapacity);
             string newCapacityString = calculateCapacity.ToString() + "GB";
-            
+
             var deviceListing = await db.Devices.Where(p => p.model == DeviceModel && p.capacity == newCapacityString).FirstOrDefaultAsync();
 
             if (deviceListing != null)
@@ -315,14 +413,22 @@ namespace FortressCodesDomain.Repository
         {
             return await db.Devices.SingleOrDefaultAsync(d => d.name == formattedDeviceName.ToLower());
         }
-
+        public Device GetDeviceByFormattedDeviceName(String formattedDeviceName)
+        {
+            return db.Devices.SingleOrDefault(d => d.name == formattedDeviceName.ToLower());
+        }
         public async Task<Device> GetDeviceByMakeModelCapacityAsync(String make, String model, String capacity)
         {
             return await db.Devices.SingleOrDefaultAsync(d => d.make.ToLower() == make.ToLower() &&
                                                               d.model.ToLower() == model.ToLower() &&
                                                               d.capacity.ToLower() == capacity.ToLower() + "gb");
         }
-
+        public Device GetDeviceByMakeModelCapacity(String make, String model, String capacity)
+        {
+            return db.Devices.SingleOrDefault(d => d.make.ToLower() == make.ToLower() &&
+                                                             d.model.ToLower() == model.ToLower() &&
+                                                             d.capacity.ToLower() == capacity.ToLower() + "gb");
+        }
 
         public async Task<Tuple<FortressCodesDomain.DbModels.Device, Boolean>> GetDBDeviceOrUnknownDeviceAsync(String make,
                                                                                                                String capacity,
@@ -352,7 +458,34 @@ namespace FortressCodesDomain.Repository
 
             return new Tuple<Device, bool>(fcdDevice, bIsDeviceMissing);
         }
+        public Tuple<FortressCodesDomain.DbModels.Device, Boolean> GetDBDeviceOrUnknownDevice(String make,
+                                                                                                               String capacity,
+                                                                                                               String model,
+                                                                                                               String countryIso)
+        {
+            FortressCodesDomain.DbModels.Device fcdDevice = null;
+            Boolean bIsDeviceMissing = false;
 
+            var calcStorage = DeviceSizeHelper.CalculateDeviceTotalSizeFromRaw(capacity);
+
+            var masterDevice = GetDeviceByMakeModelCapacity(make, model, calcStorage.ToString());
+            if (masterDevice == null)
+            {
+                var unknownDevice = db.Devices.SingleOrDefault(d => d.name.ToLower().Contains("unknown"));
+                if (unknownDevice != null)
+                {
+                    //if returning the master unknown device, the users device is missing
+                    fcdDevice = unknownDevice;
+                    bIsDeviceMissing = true;
+                }
+            }
+            else
+            {
+                fcdDevice = masterDevice;
+            }
+
+            return new Tuple<Device, bool>(fcdDevice, bIsDeviceMissing);
+        }
         public async Task<tbl_PreloadedDevice> GetPreloadedDeviceByImei(string imei, string countryISO)
         {
             tbl_PreloadedDevice dev;
@@ -442,7 +575,68 @@ namespace FortressCodesDomain.Repository
             }
             return new Tuple<Boolean, String>(bIsUnknownDevice, sLevelName);
         }
+        public Tuple<Boolean, String> GetDeviceLevel(String make, String model, String capacity,
+                                                                      String voucherCode, String countryIso)
+        {
+            Boolean bIsUnknownDevice = false;
+            String sLevelName = null;
 
+            String deviceCapacity = DeviceSizeHelper.CalculateDeviceTotalSizeFromRaw(capacity).ToString();
+
+            var voucher = db.Vouchers.SingleOrDefault(v => v.vouchercode == voucherCode);
+
+            //Int32? iPartnerID = null;
+            PricingModel pricingModel = null;
+            if (voucher != null)
+            {
+                var metadata = voucher.VoucherMetadatas.FirstOrDefault();
+                if (metadata != null)
+                {
+                    if (metadata.PricingModel != null)
+                    {
+                        pricingModel = metadata.PricingModel;
+                        //iPartnerID = metadata.PricingModel.PartnerId;
+                    }
+                }
+            }
+
+            //match on the formatted name, and the partner id
+            //TODO: include country lookup, but is it country of device or voucher
+
+            //Check if the device the user has registered with is known to the system, if not return the unknown device
+            //var device = await GetDeviceByMakeModelCapacityAsync(make, model, capacity);
+            if (pricingModel != null)
+            {
+                var device = GetDeviceByMakeModelCapacity(make, model, deviceCapacity);
+                if (device == null)
+                {
+                    var unknownDevice = GetDeviceByFormattedDeviceName("Unknown Device");
+                    if (unknownDevice != null)
+                    {
+                        bIsUnknownDevice = true;
+                        //find the unknown device level that matches the voucher level
+                        var unknownDeviceLevel = unknownDevice.DeviceLevels.SingleOrDefault(dl => dl.LevelId == pricingModel.LevelId);
+                        if (unknownDeviceLevel != null)
+                        {
+                            sLevelName = unknownDeviceLevel.Level.Name;
+                        }
+                    }
+                }
+                else
+                {
+                    var deviceLevel = GetDeviceLevelByDeviceDetails(make,
+                                                                               model,
+                                                                               deviceCapacity,
+                                                                               countryIso,
+                                                                               pricingModel);
+                    if (deviceLevel != null)
+                    {
+                        sLevelName = deviceLevel.Level.Name;
+                    }
+                }
+            }
+            return new Tuple<Boolean, String>(bIsUnknownDevice, sLevelName);
+        }
 
         public async Task<DeviceLevel> GetDeviceLevelByDeviceDetailsAsync(String deviceMake, String deviceModel,
                                                                           String deviveCapactiy, String userDeviceCountryIso,
@@ -463,8 +657,35 @@ namespace FortressCodesDomain.Repository
             }
             return ret;
         }
+        public DeviceLevel GetDeviceLevelByDeviceDetails(String deviceMake, String deviceModel,
+                                                                          String deviveCapactiy, String userDeviceCountryIso,
+                                                                          PricingModel pricingModel)
+        {
+            DeviceLevel ret = null;
+            var device = db.Devices.SingleOrDefault(d =>
+                d.make.ToLower() == deviceMake.ToLower() &&
+                d.model.ToLower() == deviceModel.ToLower() &&
+                d.capacity.ToLower() == deviveCapactiy.ToLower() + "gb");
 
+            if (device != null)
+            {
+                if (pricingModel.Country.ISO == userDeviceCountryIso)
+                {
+                    ret = device.DeviceLevels.SingleOrDefault(dl => dl.PartnerId == pricingModel.PartnerId);
+                }
+            }
+            return ret;
+        }
+        public async Task<PricingModel> GetPricingModelByDevicePartnerTierLevelAsync(Int32 partnerID, String deviceLevel, String tierName)
+        {
+            PricingModel ret = null;
 
+            ret = await db.PricingModels.SingleOrDefaultAsync(pm => pm.PartnerId == partnerID &&
+            pm.Level.Name == deviceLevel &&
+                                                                    pm.Tier.Name == tierName);
+
+            return ret;
+        }
 
         public async Task<PricingModel> GetPricingModelByDevicePartnerFamilyAsync(String deviceLevel, Int32 tierId, Int32 familyId)
         {
@@ -476,7 +697,16 @@ namespace FortressCodesDomain.Repository
 
             return ret;
         }
+        public PricingModel GetPricingModelByDevicePartnerFamily(String deviceLevel, Int32 tierId, Int32 familyId)
+        {
+            PricingModel ret = null;
 
+            ret = db.PricingModels.SingleOrDefault(pm => pm.FamilyId == familyId &&
+                                                                    pm.Level.Name == deviceLevel &&
+                                                                    pm.TeirId == tierId);
+
+            return ret;
+        }
         public async Task<IEnumerable<PricingModel>> GetActivePricingModelByFamilyAsync(int familyId)
         {
             IEnumerable<PricingModel> ret = null;

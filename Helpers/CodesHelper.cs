@@ -16,7 +16,13 @@ namespace FortressCodesDomain.Helpers
                 return db.Partners.Where(p => p.partnername == partnername).FirstOrDefault();
             }
         }
-
+        public static Partner LookupPartnerByID(int userID)
+        {
+            using (FortressCodeContext db = new FortressCodeContext())
+            {
+                return db.Partners.Where(p => p.userid == userID).FirstOrDefault();
+            }
+        }
         public static int LookupFamilyIdByName(string familyName)
         {
             using (FortressCodeContext db = new FortressCodeContext())
@@ -25,7 +31,19 @@ namespace FortressCodesDomain.Helpers
                     .Select(f => f.Id).FirstOrDefault();
             }
         }
+        public static string RandomAlphaString(Random random, int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
 
+        public static string RandomNumericString(Random random, int length)
+        {
+            const string chars = "0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
         public static int LookupTierIdByName(string tier, int partnerId)
         {
             using (FortressCodeContext db = new FortressCodeContext())

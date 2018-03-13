@@ -7,3 +7,10 @@ D:\Fortress\fcd\obj\Debug\FortressCodesDomain.csproj.CoreCompileInputs.cache
 D:\Fortress\fcd\obj\Debug\FortressCodesDomain.dll
 D:\Fortress\fcd\obj\Debug\FortressCodesDomain.pdb
 D:\Fortress\fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
+D:\Fortress\Recurring working\fortress.fcd\obj\Debug\FortressCodesDomain.csproj.CoreCompileInputs.cache
+D:\Fortress\Recurring working\fortress.fcd\bin\Debug\FortressCodesDomain.dll.config
+D:\Fortress\Recurring working\fortress.fcd\bin\Debug\FortressCodesDomain.dll
+D:\Fortress\Recurring working\fortress.fcd\bin\Debug\FortressCodesDomain.pdb
+D:\Fortress\Recurring working\fortress.fcd\obj\Debug\FortressCodesDomain.dll
+D:\Fortress\Recurring working\fortress.fcd\obj\Debug\FortressCodesDomain.pdb
+D:\Fortress\Recurring working\fortress.fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache

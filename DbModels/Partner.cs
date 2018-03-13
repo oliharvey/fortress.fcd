@@ -40,6 +40,8 @@ namespace FortressCodesDomain.DbModels
 
         public int? API_DefaultVoucherFamily { get; set; }
 
+        public string IPAddresses { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DeviceLevel> DeviceLevels { get; set; }
 
