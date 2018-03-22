@@ -11,6 +11,7 @@ namespace FortressCodesDomain.DbModels
         public PricingModel()
         {
             VoucherMetadatas = new HashSet<VoucherMetadata>();
+            VoucherSKUs = new HashSet<VoucherSKU>();
         }
 
         public int Id { get; set; }
@@ -55,5 +56,7 @@ namespace FortressCodesDomain.DbModels
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VoucherMetadata> VoucherMetadatas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<VoucherSKU> VoucherSKUs { get; set; }
     }
 }
