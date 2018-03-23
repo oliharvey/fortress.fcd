@@ -74,6 +74,11 @@ namespace FortressCodesDomain.DbModels
 
         public bool? BillingRequired { get; set; }
 
+        [StringLength(20)]
+        public string SKU { get; set; }
+
+        public int? PPCreatedByUserId { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transaction> Transactions { get; set; }
 

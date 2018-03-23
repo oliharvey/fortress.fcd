@@ -40,6 +40,7 @@ namespace FortressCodesDomain.DbModels
 
         public virtual DbSet<Voucher> Vouchers { get; set; }
         public virtual DbSet<VoucherType> VoucherTypes { get; set; }
+        public virtual DbSet<VoucherSKU> VoucherSKUs { get; set; }
         public virtual DbSet<tbl_PreloadedDevice> tbl_PreloadedDevices { get; set; }
 
         public virtual DbSet<tbl_VoucherRegistration> tbl_VoucherRegistrations { get; set; }

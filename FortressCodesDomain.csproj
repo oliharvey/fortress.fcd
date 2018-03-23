@@ -86,6 +86,7 @@
     <Compile Include="DbModels\UserProfileInfo.cs" />
     <Compile Include="DbModels\Voucher.cs" />
     <Compile Include="DbModels\VoucherMetadata.cs" />
+    <Compile Include="DbModels\VoucherSKU.cs" />
     <Compile Include="DbModels\VoucherType.cs" />
     <Compile Include="Enumerations\Enumerations.cs" />
     <Compile Include="Helpers\CodesHelper.cs" />
