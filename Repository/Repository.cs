@@ -117,15 +117,14 @@ namespace FortressCodesDomain.Repository
         {
             Tuple<bool, tbl_VoucherRegistration> returnValFail = new Tuple<bool, tbl_VoucherRegistration>(false, null);
             var voucher = await GetCodeAsync(voucherCode);
-            var calculatedStorage = CalculateDeviceTotalSizeFromRaw(deviceCapacity) + "gb";
+            var calculatedStorage = CalculateDeviceTotalSizeFromRaw(deviceCapacity) + " GB";
             if (voucher == null)
             {
 
                 return returnValFail;
             }
 
-
-            var vouchReg = db.tbl_VoucherRegistrations.Where(vouch => vouch.VoucherID == voucher.Id && vouch.CountryISO == countryISO && vouch.DeviceMake == deviceMake && vouch.DeviceModel == deviceModel && vouch.DeviceCapacity == deviceCapacity).SingleOrDefault();
+            var vouchReg = db.tbl_VoucherRegistrations.Where(vouch => vouch.VoucherID == voucher.Id && vouch.CountryISO == countryISO && vouch.DeviceMake == deviceMake && vouch.DeviceModel == deviceModel && vouch.DeviceCapacity == calculatedStorage).SingleOrDefault();
             if (vouchReg == null)
             {
                 return returnValFail;
