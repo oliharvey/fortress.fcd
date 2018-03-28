@@ -67,3 +67,10 @@ D:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.cspro
 D:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.csproj.CoreCompileInputs.cache
 D:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.dll
 D:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.pdb
+C:\Users\fiona\Source\Repos\fortress.fcd\bin\Release\FortressCodesDomain.dll.config
+C:\Users\fiona\Source\Repos\fortress.fcd\bin\Release\FortressCodesDomain.dll
+C:\Users\fiona\Source\Repos\fortress.fcd\bin\Release\FortressCodesDomain.pdb
+C:\Users\fiona\Source\Repos\fortress.fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
+C:\Users\fiona\Source\Repos\fortress.fcd\obj\Release\FortressCodesDomain.csproj.CoreCompileInputs.cache
+C:\Users\fiona\Source\Repos\fortress.fcd\obj\Release\FortressCodesDomain.dll
+C:\Users\fiona\Source\Repos\fortress.fcd\obj\Release\FortressCodesDomain.pdb
