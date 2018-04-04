@@ -29,6 +29,7 @@ namespace FortressCodesDomain.Repository
                                                                                                   String capacity,
                                                                                                   String model,
                                                                                                   String countryIso);
+        Task<Tuple<bool, tbl_VoucherRegistration>> CheckIfVoucherDeviceMatchesVoucher(string voucherCode, string countryISO, string deviceMake, string deviceModel, string imei, string deviceCapacity);
 
         Task<tbl_PreloadedDevice> GetPreloadedDeviceByImei(string imei, string countryISO);
         Task<Tuple<Boolean, String>> GetDeviceLevelAsync(String make, String model, String capacity, String voucherCode, String countryIso);

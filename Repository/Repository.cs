@@ -7,6 +7,7 @@ using System.Data.Entity.Validation;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace FortressCodesDomain.Repository
 {
@@ -381,7 +382,83 @@ namespace FortressCodesDomain.Repository
 
             return ret;
         }
+        private static Double ExtractDoubleFromDeviceCapacityRaw(String deviceCapacityRaw)
+        {
+            Regex digitsRegex = new Regex(@"^\D*?((-?(\d+(\.\d+)?))|(-?\.\d+)).*");
+            Match mx = digitsRegex.Match(deviceCapacityRaw);
+            return mx.Success ? Convert.ToDouble(mx.Groups[1].Value) : 0;
+        }
+        public static Int32 CalculateDeviceTotalSizeFromRaw(String capacityRaw)
+        {
+            Int32 ret = 0;
+            Double capacity = ExtractDoubleFromDeviceCapacityRaw(capacityRaw);
+            if (capacity < 1.00d)
+            {
+                ret = 1;
+            }
+            if (capacity >= 1.00d && capacity < 2.00d)
+            {
+                ret = 2;
+            }
+            if (capacity >= 2.00d && capacity < 4.00d)
+            {
+                ret = 4;
+            }
+            if (capacity >= 4.00d && capacity < 8.00d)
+            {
+                ret = 8;
+            }
+            if (capacity >= 8.00d && capacity < 16.00d)
+            {
+                ret = 16;
+            }
+            if (capacity >= 16.00d && capacity < 32.00d)
+            {
+                ret = 32;
+            }
+            if (capacity >= 32.00d && capacity < 64.00d)
+            {
+                ret = 64;
+            }
+            if (capacity >= 64.00d && capacity < 128.00d)
+            {
+                ret = 128;
+            }
+            if (capacity >= 128.00d && capacity < 256.00d)
+            {
+                ret = 256;
+            }
+            if (capacity >= 256.00d && capacity < 512.00d)
+            {
+                ret = 512;
+            }
 
+            return ret;
+        }
+        public async Task<Tuple<bool, tbl_VoucherRegistration>> CheckIfVoucherDeviceMatchesVoucher(string voucherCode, string countryISO, string deviceMake, string deviceModel, string imei, string deviceCapacity)
+        {
+            Tuple<bool, tbl_VoucherRegistration> returnValFail = new Tuple<bool, tbl_VoucherRegistration>(false, null);
+            var voucher = await GetCodeAsync(voucherCode);
+            var calculatedStorage = CalculateDeviceTotalSizeFromRaw(deviceCapacity) + " GB";
+            if (voucher == null)
+            {
+
+                return returnValFail;
+            }
+
+            var vouchReg = db.tbl_VoucherRegistrations.Where(vouch => vouch.VoucherID == voucher.Id && vouch.CountryISO == countryISO && vouch.DeviceMake == deviceMake && vouch.DeviceModel == deviceModel && vouch.DeviceCapacity == calculatedStorage).SingleOrDefault();
+            if (vouchReg == null)
+            {
+                return returnValFail;
+            }
+            else
+            {
+                Tuple<bool, tbl_VoucherRegistration> returnValSuccess = new Tuple<bool, tbl_VoucherRegistration>(true, vouchReg);
+                return returnValSuccess;
+            }
+
+
+        }
         public async Task<IEnumerable<PricingModel>> GetActivePricingModelByFamilyAsync(int familyId)
         {
             IEnumerable<PricingModel> ret = null;
