@@ -125,6 +125,17 @@ namespace FortressCodesDomain.DbModels
             //    .HasRequired(e => e.Voucher)
             //    .WithMany(e => e.PreloadedDevices)
             //    .HasForeignKey(e => e.VoucherID);
+
+        }
+
+
+        /// <summary>
+        ///   FJT - Database sequence for unique voucher batch number
+        /// </summary>
+        /// <returns>next batch number</returns>
+        public int GetNextVoucherBatchSequence()
+        {
+            return Database.SqlQuery<int>("SELECT NEXT VALUE FOR dbo.seqVoucherBatch;").First();
         }
     }
 }
