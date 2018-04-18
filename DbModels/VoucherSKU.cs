@@ -57,6 +57,8 @@ namespace FortressCodesDomain.DbModels
 
         public DateTime? OfferExpiryDate { get; set; }
 
+        public Decimal? SellPrice { get; set; }
+
         public virtual VoucherType VoucherType { get; set; }
         public virtual PricingModel PricingModel { get; set; }
 

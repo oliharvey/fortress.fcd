@@ -79,6 +79,8 @@ namespace FortressCodesDomain.DbModels
 
         public int? PPCreatedByUserId { get; set; }
 
+        public int? PPBusinessEntityId { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transaction> Transactions { get; set; }
 
