@@ -63,7 +63,14 @@ D:\Fortress\fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.c
 D:\Fortress\Recurring working\fortress.fcd\bin\Release\FortressCodesDomain.dll.config
 D:\Fortress\Recurring working\fortress.fcd\bin\Release\FortressCodesDomain.dll
 D:\Fortress\Recurring working\fortress.fcd\bin\Release\FortressCodesDomain.pdb
-D:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
 D:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.csproj.CoreCompileInputs.cache
 D:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.dll
 D:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.pdb
+D:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
+C:\Fortress\Recurring working\fortress.fcd\bin\Release\FortressCodesDomain.dll.config
+C:\Fortress\Recurring working\fortress.fcd\bin\Release\FortressCodesDomain.dll
+C:\Fortress\Recurring working\fortress.fcd\bin\Release\FortressCodesDomain.pdb
+C:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
+C:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.csproj.CoreCompileInputs.cache
+C:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.dll
+C:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.pdb

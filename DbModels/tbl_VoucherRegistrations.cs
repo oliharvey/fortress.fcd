@@ -47,5 +47,7 @@ namespace FortressCodesDomain.DbModels
 
         [StringLength(50)]
         public string Imei { get; set; }
+
+        public DateTime DateAdded { get; set; }
     }
 }
