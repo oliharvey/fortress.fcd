@@ -8,3 +8,7 @@
 /packages/Newtonsoft.Json.8.0.3
 *.sln
 *.suo
+/bin/Debug/Newtonsoft.Json.dll
+/bin/Debug/Newtonsoft.Json.xml
+/bin/Release/Newtonsoft.Json.dll
+/bin/Release/Newtonsoft.Json.xml

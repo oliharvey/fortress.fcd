@@ -46,6 +46,9 @@ namespace FortressCodesDomain.DbModels
         public virtual DbSet<tbl_VoucherRegistration> tbl_VoucherRegistrations { get; set; }
         public virtual DbSet<tbl_DeviceValueAudit> tbl_DeviceValueAudits { get; set; }
         public virtual DbSet<tbl_Profanity> tbl_Profanitys { get; set; }
+
+        public virtual DbSet<PartnerPortalBusinessEntity> PartnerPortalBusinessEntities { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AspNetRole>()
