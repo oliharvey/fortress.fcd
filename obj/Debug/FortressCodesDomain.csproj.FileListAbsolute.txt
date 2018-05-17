@@ -14,12 +14,6 @@ D:\Fortress\Recurring working\fortress.fcd\bin\Debug\FortressCodesDomain.pdb
 D:\Fortress\Recurring working\fortress.fcd\obj\Debug\FortressCodesDomain.dll
 D:\Fortress\Recurring working\fortress.fcd\obj\Debug\FortressCodesDomain.pdb
 D:\Fortress\Recurring working\fortress.fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
-C:\Users\fiona\Source\Repos\fortress.fcd\bin\Debug\FortressCodesDomain.dll.config
-C:\Users\fiona\Source\Repos\fortress.fcd\bin\Debug\FortressCodesDomain.dll
-C:\Users\fiona\Source\Repos\fortress.fcd\bin\Debug\FortressCodesDomain.pdb
-C:\Users\fiona\Source\Repos\fortress.fcd\obj\Debug\FortressCodesDomain.csproj.CoreCompileInputs.cache
-C:\Users\fiona\Source\Repos\fortress.fcd\obj\Debug\FortressCodesDomain.dll
-C:\Users\fiona\Source\Repos\fortress.fcd\obj\Debug\FortressCodesDomain.pdb
 C:\Fortress\Recurring working\fortress.fcd\bin\Debug\FortressCodesDomain.dll.config
 C:\Fortress\Recurring working\fortress.fcd\bin\Debug\FortressCodesDomain.dll
 C:\Fortress\Recurring working\fortress.fcd\bin\Debug\FortressCodesDomain.pdb
@@ -27,4 +21,10 @@ C:\Fortress\Recurring working\fortress.fcd\obj\Debug\FortressCodesDomain.csprojR
 C:\Fortress\Recurring working\fortress.fcd\obj\Debug\FortressCodesDomain.csproj.CoreCompileInputs.cache
 C:\Fortress\Recurring working\fortress.fcd\obj\Debug\FortressCodesDomain.dll
 C:\Fortress\Recurring working\fortress.fcd\obj\Debug\FortressCodesDomain.pdb
+C:\Users\fiona\Source\Repos\fortress.fcd\bin\Debug\FortressCodesDomain.dll.config
+C:\Users\fiona\Source\Repos\fortress.fcd\bin\Debug\FortressCodesDomain.dll
+C:\Users\fiona\Source\Repos\fortress.fcd\bin\Debug\FortressCodesDomain.pdb
 C:\Users\fiona\Source\Repos\fortress.fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
+C:\Users\fiona\Source\Repos\fortress.fcd\obj\Debug\FortressCodesDomain.csproj.CoreCompileInputs.cache
+C:\Users\fiona\Source\Repos\fortress.fcd\obj\Debug\FortressCodesDomain.dll
+C:\Users\fiona\Source\Repos\fortress.fcd\obj\Debug\FortressCodesDomain.pdb

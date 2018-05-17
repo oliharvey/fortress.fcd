@@ -1,34 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Spatial;
-
 namespace FortressCodesDomain.DbModels
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
     [Table("PartnerPortalBusinessEntity")]
     public partial class PartnerPortalBusinessEntity
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PartnerPortalBusinessEntity()
         {
-
+            PartnerPortalBusinessEntityChildren = new HashSet<PartnerPortalBusinessEntity>();
         }
 
-        [Required]
         public int Id { get; set; }
 
         [Required]
         [StringLength(150)]
         public string BusinessName { get; set; }
 
-        [Required]
         public int BusinessTypeId { get; set; }
 
         [StringLength(5)]
         public string Country { get; set; }
 
-        [Required]
         public int? ParentBusinessId { get; set; }
 
         [StringLength(1000)]
@@ -54,12 +51,14 @@ namespace FortressCodesDomain.DbModels
 
         public int? PrimaryContactId { get; set; }
 
-        public bool  PartnerFlag { get; set; }
+        public bool PartnerFlag { get; set; }
 
         public bool HasStripeAccount { get; set; }
 
         [StringLength(2000)]
         public string StripeDetails { get; set; }
+
+        public bool HasWallet { get; set; }
 
         public int PartnerId { get; set; }
 
@@ -67,5 +66,11 @@ namespace FortressCodesDomain.DbModels
 
         public int? MaxVouchers { get; set; }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PartnerPortalBusinessEntity> PartnerPortalBusinessEntityChildren { get; set; }
+
+        public virtual PartnerPortalBusinessEntity PartnerPortalBusinessEntityParent { get; set; }
+
+        public virtual PartnerPortalBusinessType PartnerPortalBusinessType { get; set; }
     }
 }

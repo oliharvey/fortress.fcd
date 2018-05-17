@@ -124,6 +124,22 @@ namespace FortressCodesDomain.DbModels
                 .WithOptional(e => e.Voucher)
                 .HasForeignKey(e => e.CodeId);
 
+            modelBuilder.Entity<PartnerPortalBusinessEntity>()
+                .HasMany(e => e.PartnerPortalBusinessEntityChildren)
+                .WithOptional(e => e.PartnerPortalBusinessEntityParent)
+                .HasForeignKey(e => e.ParentBusinessId);
+
+            modelBuilder.Entity<PartnerPortalBusinessType>()
+                .HasMany(e => e.PartnerPortalBusinessEntities)
+                .WithRequired(e => e.PartnerPortalBusinessType)
+                .HasForeignKey(e => e.BusinessTypeId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PartnerPortalBusinessType>()
+                .HasMany(e => e.PartnerPortalBusinessType1)
+                .WithOptional(e => e.PartnerPortalBusinessType2)
+                .HasForeignKey(e => e.ParentBusinessTypeId);
+
             //modelBuilder.Entity<tbl_PreloadedDevice>()
             //    .HasRequired(e => e.Voucher)
             //    .WithMany(e => e.PreloadedDevices)

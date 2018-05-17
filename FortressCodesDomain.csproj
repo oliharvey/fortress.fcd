@@ -48,6 +48,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,6 +77,7 @@
     <Compile Include="DbModels\Partner.cs" />
     <Compile Include="DbModels\PartnerChannel.cs" />
     <Compile Include="DbModels\PartnerPortalBusinessEntity.cs" />
+    <Compile Include="DbModels\PartnerPortalBusinessType.cs" />
     <Compile Include="DbModels\PricingModel.cs" />
     <Compile Include="DbModels\Status.cs" />
     <Compile Include="DbModels\tbl_DeviceValueAudit.cs" />
