@@ -6,7 +6,7 @@ namespace FortressCodesDomain.DbModels
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("MembershipTier")]
+    [Table("voucher_MembershipTier")]
     public partial class MembershipTier
     {
         public int id { get; set; }

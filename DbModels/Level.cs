@@ -6,7 +6,7 @@ namespace FortressCodesDomain.DbModels
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Level")]
+    [Table("voucher_Level")]
     public partial class Level
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

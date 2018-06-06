@@ -6,7 +6,7 @@ namespace FortressCodesDomain.DbModels
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("PartnerChannel")]
+    [Table("voucher_PartnerChannel")]
     public partial class PartnerChannel
     {
         [Key]

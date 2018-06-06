@@ -7,7 +7,7 @@ namespace FortressCodesDomain.DbModels
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-    [Table("tbl_PreloadedDevices")]
+    [Table("voucher_tbl_PreloadedDevices")]
     public partial class tbl_PreloadedDevice
     {
         public int Id { get; set; }

@@ -5,7 +5,7 @@ namespace FortressCodesDomain.DbModels
     using System.ComponentModel.DataAnnotations.Schema;   
 
 
-    [Table("tbl_profanity")]
+    [Table("voucher_tbl_profanity")]
     public partial class tbl_Profanity
     {
 

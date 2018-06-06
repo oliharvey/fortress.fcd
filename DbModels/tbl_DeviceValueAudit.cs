@@ -2,7 +2,7 @@ namespace FortressCodesDomain.DbModels
 {
     using System.ComponentModel.DataAnnotations.Schema;
     using System;
-    [Table("tbl_DeviceValueAudit")]
+    [Table("voucher_tbl_DeviceValueAudit")]
     public partial class tbl_DeviceValueAudit
     {
         public int ID { get; set; }

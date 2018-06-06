@@ -8,7 +8,7 @@ namespace FortressCodesDomain.DbModels
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("VoucherSKU")]
+    [Table("voucher_VoucherSKU")]
     public partial class VoucherSKU
     {
         public int Id { get; set; }

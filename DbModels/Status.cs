@@ -6,6 +6,7 @@ namespace FortressCodesDomain.DbModels
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    [Table("voucher_Status")]
     public partial class Status
     {
         public int Id { get; set; }

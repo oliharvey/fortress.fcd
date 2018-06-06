@@ -74,3 +74,12 @@ C:\Users\fiona\Source\Repos\fortress.fcd\obj\Release\FortressCodesDomain.csprojR
 C:\Users\fiona\Source\Repos\fortress.fcd\obj\Release\FortressCodesDomain.csproj.CoreCompileInputs.cache
 C:\Users\fiona\Source\Repos\fortress.fcd\obj\Release\FortressCodesDomain.dll
 C:\Users\fiona\Source\Repos\fortress.fcd\obj\Release\FortressCodesDomain.pdb
+C:\Fortress\Recurring working\fortress.fcd\bin\Release\FortressCodesDomain.dll.config
+C:\Fortress\Recurring working\fortress.fcd\bin\Release\FortressCodesDomain.dll
+C:\Fortress\Recurring working\fortress.fcd\bin\Release\FortressCodesDomain.pdb
+C:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.csprojResolveAssemblyReference.cache
+C:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.csproj.CoreCompileInputs.cache
+C:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.dll
+C:\Fortress\Recurring working\fortress.fcd\obj\Release\FortressCodesDomain.pdb
+C:\Fortress\Recurring working\fortress.fcd\bin\Release\Newtonsoft.Json.dll
+C:\Fortress\Recurring working\fortress.fcd\bin\Release\Newtonsoft.Json.xml

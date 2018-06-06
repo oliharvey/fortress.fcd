@@ -8,7 +8,7 @@ namespace FortressCodesDomain.DbModels
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("tbl_VoucherRegistration")]
+    [Table("voucher_tbl_VoucherRegistration")]
     public partial class tbl_VoucherRegistration
     {
         public int Id { get; set; }

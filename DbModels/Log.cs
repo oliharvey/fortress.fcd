@@ -6,7 +6,7 @@ namespace FortressCodesDomain.DbModels
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Log")]
+    [Table("voucher_Log")]
     public partial class Log
     {
         public int Id { get; set; }

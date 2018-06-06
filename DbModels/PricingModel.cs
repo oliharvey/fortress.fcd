@@ -4,7 +4,7 @@ namespace FortressCodesDomain.DbModels
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("PricingModel")]
+    [Table("voucher_PricingModel")]
     public partial class PricingModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

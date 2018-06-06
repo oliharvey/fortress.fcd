@@ -4,7 +4,7 @@ namespace FortressCodesDomain.DbModels
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("Transaction")]
+    [Table("voucher_Transaction")]
     public partial class Transaction
     {
         public int Id { get; set; }

@@ -2,7 +2,7 @@ namespace FortressCodesDomain.DbModels
 {
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("DeviceLevel")]
+    [Table("voucher_DeviceLevel")]
     public partial class DeviceLevel
     {
         public int Id { get; set; }

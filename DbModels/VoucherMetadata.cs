@@ -6,7 +6,7 @@ namespace FortressCodesDomain.DbModels
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("VoucherMetadata")]
+    [Table("voucher_VoucherMetadata")]
     public partial class VoucherMetadata
     {
         public int Id { get; set; }

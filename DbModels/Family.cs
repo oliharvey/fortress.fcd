@@ -4,7 +4,7 @@ namespace FortressCodesDomain.DbModels
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("Family")]
+    [Table("voucher_Family")]
     public partial class Family
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

@@ -4,7 +4,7 @@ namespace FortressCodesDomain.DbModels
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("Tier")]
+    [Table("voucher_Tier")]
     public partial class Tier
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
