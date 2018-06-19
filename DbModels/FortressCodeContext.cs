@@ -48,6 +48,7 @@ namespace FortressCodesDomain.DbModels
         public virtual DbSet<tbl_Profanity> tbl_Profanitys { get; set; }
 
         public virtual DbSet<PartnerPortalBusinessEntity> PartnerPortalBusinessEntities { get; set; }
+        public virtual DbSet<ClaimsPortalUser> ClaimPortalUsers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
