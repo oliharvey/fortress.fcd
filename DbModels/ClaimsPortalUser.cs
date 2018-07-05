@@ -26,5 +26,7 @@ namespace FortressCodesDomain.DbModels
 
         public byte[] Salt { get; set; }
         public byte[] Hash { get; set; }
+
+        public int? Roles { get; set; }
     }
 }
