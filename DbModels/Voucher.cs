@@ -82,8 +82,14 @@ namespace FortressCodesDomain.DbModels
 
         public int? PPBusinessEntityId { get; set; }
 
-        [StringLength (100)]
+        [StringLength(100)]
         public string DeliveredTo { get; set; }
+
+        [StringLength(100)]
+        public string SMS { get; set; }
+
+        public int? ReminderDays { get; set; }
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transaction> Transactions { get; set; }
