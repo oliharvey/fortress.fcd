@@ -28,5 +28,12 @@ namespace FortressCodesDomain.DbModels
         public byte[] Hash { get; set; }
 
         public int? Roles { get; set; }
+
+        [StringLength(5)]
+        public string Country { get; set; }
+
+        [StringLength(5)]
+        public string Language { get; set; }
+
     }
 }
