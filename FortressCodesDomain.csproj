@@ -64,6 +64,7 @@
     <Compile Include="DbModels\AspNetUserLogin.cs" />
     <Compile Include="DbModels\Channel.cs" />
     <Compile Include="DbModels\ChannelType.cs" />
+    <Compile Include="DbModels\ClaimRoles.cs" />
     <Compile Include="DbModels\ClaimsPortalUser.cs" />
     <Compile Include="DbModels\Country.cs" />
     <Compile Include="DbModels\Currency.cs" />
