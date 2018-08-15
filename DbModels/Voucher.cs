@@ -96,9 +96,6 @@ namespace FortressCodesDomain.DbModels
         public DateTime? SMSSentDate { get; set; }
         public DateTime? SMSReminderSentDate { get; set; }
 
-        public bool TestFlag { get; set; }
-
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transaction> Transactions { get; set; }
 
