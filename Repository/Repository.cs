@@ -501,7 +501,7 @@ namespace FortressCodesDomain.Repository
                         PricingModel pm = vmd.PricingModel;
                         if (pm.Country != null)
                         {
-                            if (pm.Country.ISO == countryISO)
+                            if (pm.Country.ISO == (countryISO == null ? pm.Country.ISO : countryISO))
                                 deviceFound = true;
                         }
                     }
