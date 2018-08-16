@@ -90,6 +90,11 @@ namespace FortressCodesDomain.DbModels
 
         public int? ReminderDays { get; set; }
 
+        public DateTime? EmailSentDate { get; set; }
+        public DateTime? EmailReminderSentDate { get; set; }
+
+        public DateTime? SMSSentDate { get; set; }
+        public DateTime? SMSReminderSentDate { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transaction> Transactions { get; set; }
