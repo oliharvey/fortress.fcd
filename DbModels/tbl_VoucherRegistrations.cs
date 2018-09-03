@@ -49,5 +49,9 @@ namespace FortressCodesDomain.DbModels
         public string Imei { get; set; }
 
         public DateTime DateAdded { get; set; }
+
+        public virtual Voucher Voucher { get; set; }
+
+
     }
 }
