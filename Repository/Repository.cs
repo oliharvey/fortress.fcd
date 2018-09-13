@@ -304,6 +304,23 @@ namespace FortressCodesDomain.Repository
               .ToListAsync();
             return pms;
         }
+
+        public async Task<IEnumerable<PricingModel>> GetPricingModelsByFamilyIdTierSubUpgradeCurrentAsync(Int32 familyId, Int32 deviceLevelID, Tier currentTier, Tier validationTier)
+        {
+            //new method to facilitate providing an upgrade to recurring subscription customers. Return only 
+            var pms = await (from pm in db.PricingModels
+                             join t in db.Tiers on pm.Tier.Id equals t.Id
+                             where pm.FamilyId == familyId && pm.LevelId == deviceLevelID && (t.TierLevel > currentTier.TierLevel)
+                             select pm)
+              .ToListAsync();
+            if (validationTier != null && validationTier.TierLevel.HasValue)
+                pms = await (from pm in db.PricingModels
+                             join t in db.Tiers on pm.Tier.Id equals t.Id
+                             where pm.FamilyId == familyId && pm.LevelId == deviceLevelID && (t.TierLevel > currentTier.TierLevel) && (t.TierLevel >= validationTier.TierLevel)
+                             select pm).ToListAsync();
+
+            return pms;
+        }
         public async Task<PricingModel> GetPricingModelByIdAsync(Int32 id)
         {
             return await db.PricingModels.SingleOrDefaultAsync(pm => pm.Id == id);
