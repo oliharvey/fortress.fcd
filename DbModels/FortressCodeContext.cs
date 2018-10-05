@@ -36,6 +36,7 @@ namespace FortressCodesDomain.DbModels
         public virtual DbSet<TransactionType> TransactionTypes { get; set; }
         public virtual DbSet<UserProfileInfo> UserProfileInfoes { get; set; }
         public virtual DbSet<VoucherMetadata> VoucherMetadatas { get; set; }
+        public virtual DbSet<Underwriter> Underwriters { get; set; }
 
 
         public virtual DbSet<Voucher> Vouchers { get; set; }

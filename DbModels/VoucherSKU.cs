@@ -61,6 +61,7 @@ namespace FortressCodesDomain.DbModels
         public Decimal? RetailPrice  { get; set; }
 
         public bool PPFlag { get; set; }
+        public bool AdvanceInvoicing { get; set; }
 
         public virtual VoucherType VoucherType { get; set; }
         public virtual PricingModel PricingModel { get; set; }

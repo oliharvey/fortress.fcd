@@ -89,6 +89,7 @@
     <Compile Include="DbModels\Tier.cs" />
     <Compile Include="DbModels\Transaction.cs" />
     <Compile Include="DbModels\TransactionType.cs" />
+    <Compile Include="DbModels\Underwriter.cs" />
     <Compile Include="DbModels\UserProfileInfo.cs" />
     <Compile Include="DbModels\Voucher.cs" />
     <Compile Include="DbModels\VoucherMetadata.cs" />

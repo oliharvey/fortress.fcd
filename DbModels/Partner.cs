@@ -44,6 +44,11 @@ namespace FortressCodesDomain.DbModels
 
         public string IPAddresses { get; set; }
 
+        public int? UnderwriterId { get; set; }
+
+        public virtual Underwriter Underwriter { get; set; }
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DeviceLevel> DeviceLevels { get; set; }
 
