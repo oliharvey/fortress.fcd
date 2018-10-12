@@ -48,6 +48,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -72,6 +73,9 @@
     <Compile Include="DbModels\Device.cs" />
     <Compile Include="DbModels\DeviceLevel.cs" />
     <Compile Include="DbModels\Family.cs" />
+    <Compile Include="DbModels\FFS_InvoiceHeader.cs" />
+    <Compile Include="DbModels\FFS_InvoiceLine.cs" />
+    <Compile Include="DbModels\FFS_InvoiceLineBatch.cs" />
     <Compile Include="DbModels\FortressCodeContext.cs" />
     <Compile Include="DbModels\Level.cs" />
     <Compile Include="DbModels\Log.cs" />
@@ -107,7 +111,9 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

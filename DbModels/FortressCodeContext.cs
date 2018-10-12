@@ -52,6 +52,11 @@ namespace FortressCodesDomain.DbModels
         public virtual DbSet<ClaimsPortalUser> ClaimPortalUsers { get; set; }
         public virtual DbSet<ClaimRoles> ClaimRoles { get; set; }
 
+        public virtual DbSet<FFS_InvoiceHeader> FFS_InvoiceHeader { get; set; }
+        public virtual DbSet<FFS_InvoiceLine> FFS_InvoiceLine { get; set; }
+        public virtual DbSet<FFS_InvoiceLineBatch> FFS_InvoiceLineBatch { get; set; }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AspNetRole>()
@@ -147,6 +152,16 @@ namespace FortressCodesDomain.DbModels
             //    .HasRequired(e => e.Voucher)
             //    .WithMany(e => e.PreloadedDevices)
             //    .HasForeignKey(e => e.VoucherID);
+
+            modelBuilder.Entity<FFS_InvoiceHeader>()
+                .HasMany(e => e.FFS_InvoiceLine)
+                .WithRequired(e => e.FFS_InvoiceHeader)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<FFS_InvoiceLine>()
+                .HasMany(e => e.FFS_InvoiceLineBatch)
+                .WithRequired(e => e.FFS_InvoiceLine)
+                .WillCascadeOnDelete(false);
 
         }
 
