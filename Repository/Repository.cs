@@ -848,5 +848,34 @@ namespace FortressCodesDomain.Repository
         }
 
 
+        public int CheckAdvanceInvoiceSKUFreeCapacity(string sku)
+        {
+            if (!String.IsNullOrEmpty(sku))
+            {
+                var skuRec = db.VoucherSKUs.Where(s => s.SKU == sku).FirstOrDefault();
+                if (skuRec == null || !skuRec.AdvanceInvoicing)
+                {
+                    return 0;
+                }
+                else
+                {
+
+                    int used = (from l in db.FFS_InvoiceLine
+                                join h in db.FFS_InvoiceHeader on l.InvoiceId equals h.InvoiceId
+                                join b in db.FFS_InvoiceLineBatch on l.InvoiceLineId equals b.InvoiceLineId
+                                where l.SKU == skuRec.SKU && h.Active
+                                select (int?)b.Quantity).Sum() ?? 0;
+
+                    int totalCapacity = (from l in db.FFS_InvoiceLine
+                                         join h in db.FFS_InvoiceHeader on l.InvoiceId equals h.InvoiceId
+                                         where l.SKU == skuRec.SKU && h.Active
+                                         select (int?)l.Quantity).Sum() ?? 0;
+
+
+                    return totalCapacity - used;
+                }
+            }
+            return 0;
+        }
     }
 }

@@ -68,5 +68,7 @@ namespace FortressCodesDomain.Repository
         Task<Level> GetLevelByNameAsync(String levelName);
         Task<string> GenerateVoucherCode(bool NumericVoucherOnly, int voucherlength);
         int AddVoucherRegistration(tbl_VoucherRegistration entity);
+
+        int CheckAdvanceInvoiceSKUFreeCapacity(string sku);
     }
 }
