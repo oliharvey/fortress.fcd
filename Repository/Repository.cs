@@ -855,7 +855,7 @@ namespace FortressCodesDomain.Repository
                 var skuRec = db.VoucherSKUs.Where(s => s.SKU == sku).FirstOrDefault();
                 if (skuRec == null || !skuRec.AdvanceInvoicing)
                 {
-                    return 0;
+                    return -1;
                 }
                 else
                 {
