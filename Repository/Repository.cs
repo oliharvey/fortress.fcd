@@ -696,10 +696,22 @@ namespace FortressCodesDomain.Repository
         {
             PricingModel ret = null;
 
-            ret = await db.PricingModels.SingleOrDefaultAsync(pm => pm.PartnerId == partnerID &&
-            pm.Level.Name == deviceLevel &&
-                                                                    pm.Tier.Name == tierName);
+            // Get default family for the partner
 
+            Partner partner = db.Partners.Where(p => p.userid == partnerID).FirstOrDefault();
+            if (partner != null && partner.API_DefaultVoucherFamily != null)
+            {
+                ret = await db.PricingModels.SingleOrDefaultAsync(pm => pm.PartnerId == partnerID &&
+                pm.Level.Name == deviceLevel 
+                && pm.Tier.Name == tierName
+                && pm.FamilyId == partner.API_DefaultVoucherFamily);
+            }
+            else
+            {
+                ret = await db.PricingModels.SingleOrDefaultAsync(pm => pm.PartnerId == partnerID &&
+                pm.Level.Name == deviceLevel
+                && pm.Tier.Name == tierName);
+            }
             return ret;
         }
 
