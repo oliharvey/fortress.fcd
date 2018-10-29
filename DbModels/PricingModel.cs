@@ -44,6 +44,8 @@ namespace FortressCodesDomain.DbModels
 
         public bool? Protected { get; set; }
 
+        public int? RetailClassId { get; set; }
+
         public virtual Country Country { get; set; }
 
         public virtual Family Family { get; set; }
@@ -53,6 +55,8 @@ namespace FortressCodesDomain.DbModels
         public virtual Partner Partner { get; set; }
 
         public virtual Tier Tier { get; set; }
+
+        public virtual RetailClass RetailClass { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VoucherMetadata> VoucherMetadatas { get; set; }

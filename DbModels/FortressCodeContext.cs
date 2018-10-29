@@ -56,6 +56,7 @@ namespace FortressCodesDomain.DbModels
         public virtual DbSet<FFS_InvoiceLine> FFS_InvoiceLine { get; set; }
         public virtual DbSet<FFS_InvoiceLineBatch> FFS_InvoiceLineBatch { get; set; }
 
+        public virtual DbSet<RetailClass> RetailClass { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -162,6 +163,11 @@ namespace FortressCodesDomain.DbModels
                 .HasMany(e => e.FFS_InvoiceLineBatch)
                 .WithRequired(e => e.FFS_InvoiceLine)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<RetailClass>()
+                .HasMany(e => e.PricingModel)
+                .WithOptional(e => e.RetailClass)
+                .HasForeignKey(e => e.RetailClassId);
 
         }
 
