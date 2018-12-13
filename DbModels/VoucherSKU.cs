@@ -63,6 +63,13 @@ namespace FortressCodesDomain.DbModels
         public bool PPFlag { get; set; }
         public bool AdvanceInvoicing { get; set; }
 
+        public Boolean? DisallowUpgrades { get; set; }
+        public Boolean? DisallowFortressFreedom { get; set; }
+        public Boolean? Gateway { get; set; }
+        public Boolean? AllowMonthlyBilling { get; set; }
+        public Boolean? AllowAnnualBilling { get; set; }
+
+
         public virtual VoucherType VoucherType { get; set; }
         public virtual PricingModel PricingModel { get; set; }
 

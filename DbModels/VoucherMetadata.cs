@@ -20,12 +20,18 @@ namespace FortressCodesDomain.DbModels
         public int? PaymentSource { get; set; }
         public int? TransferToBasic { get; set; }
 
+
         public virtual PricingModel PricingModel { get; set; }
 
         public virtual Voucher Voucher { get; set; }
 
         public virtual VoucherType VoucherType { get; set; }
 
-        public Boolean? TestAccount { get; set; } 
+        public Boolean? TestAccount { get; set; }
+        public Boolean? DisallowUpgrades { get; set; }
+        public Boolean? DisallowFortressFreedom { get; set; }
+        public Boolean? Gateway { get; set; }
+        public Boolean? AllowMonthlyBilling { get; set; }
+        public Boolean? AllowAnnualBilling { get; set; }
     }
 }
