@@ -76,17 +76,17 @@ namespace FortressCodesDomain.DbModels
         public bool? BillingRequired { get; set; }
 
         [StringLength(20)]
-        public string SKU { get; set; }
+        public String SKU { get; set; }
 
         public int? PPCreatedByUserId { get; set; }
 
         public int? PPBusinessEntityId { get; set; }
 
         [StringLength(100)]
-        public string DeliveredTo { get; set; }
+        public String DeliveredTo { get; set; }
 
         [StringLength(100)]
-        public string SMS { get; set; }
+        public String SMS { get; set; }
 
         public int? ReminderDays { get; set; }
 
@@ -95,6 +95,13 @@ namespace FortressCodesDomain.DbModels
 
         public DateTime? SMSSentDate { get; set; }
         public DateTime? SMSReminderSentDate { get; set; }
+
+        [StringLength(50)]
+        public String PPFirstName { get; set; }
+        [StringLength(50)]
+        public String PPLastName { get; set; }
+        [StringLength(20)]
+        public String PPPostcode { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transaction> Transactions { get; set; }
