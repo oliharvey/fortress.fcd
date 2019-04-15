@@ -37,6 +37,7 @@ namespace FortressCodesDomain.DbModels
         public virtual DbSet<UserProfileInfo> UserProfileInfoes { get; set; }
         public virtual DbSet<VoucherMetadata> VoucherMetadatas { get; set; }
         public virtual DbSet<Underwriter> Underwriters { get; set; }
+        public virtual DbSet<PartnerProgramme> PartnerProgrammes { get; set; }
 
 
         public virtual DbSet<Voucher> Vouchers { get; set; }
@@ -105,6 +106,11 @@ namespace FortressCodesDomain.DbModels
                 .HasMany(e => e.Tiers)
                 .WithOptional(e => e.Partner)
                 .HasForeignKey(e => e.PartnerId);
+
+            modelBuilder.Entity<PartnerProgramme>()
+               .HasMany(e => e.Partners)
+               .WithOptional(e => e.PartnerProgramme)
+               .HasForeignKey(e => e.PartnerProgrammeId);
 
             modelBuilder.Entity<PricingModel>().Property(o => o.DailyPrice).HasPrecision(18,9);
 

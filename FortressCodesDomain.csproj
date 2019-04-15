@@ -84,6 +84,7 @@
     <Compile Include="DbModels\PartnerChannel.cs" />
     <Compile Include="DbModels\PartnerPortalBusinessEntity.cs" />
     <Compile Include="DbModels\PartnerPortalBusinessType.cs" />
+    <Compile Include="DbModels\PartnerProgramme.cs" />
     <Compile Include="DbModels\PricingModel.cs" />
     <Compile Include="DbModels\RetailClass.cs" />
     <Compile Include="DbModels\Status.cs" />

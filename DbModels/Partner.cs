@@ -48,6 +48,10 @@ namespace FortressCodesDomain.DbModels
 
         public virtual Underwriter Underwriter { get; set; }
 
+        public int? PartnerProgrammeId { get; set; }
+
+        public virtual PartnerProgramme PartnerProgramme { get; set; }
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DeviceLevel> DeviceLevels { get; set; }

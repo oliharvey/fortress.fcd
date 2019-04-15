@@ -284,7 +284,7 @@ namespace FortressCodesDomain.Repository
             //return await db.PricingModels.Where(pm => pm.FamilyId == familyId && pm.LevelId == deviceLevelID).ToListAsync();
 
             //Code reverted 06/06/2017 to return pricingmodels equal and greater to current coverages tier
-
+           
             //Code re-reverted 02/11/2017 to return pricingmodels greater than current tier except when ultimate then return other pricingmodels which are of tier ultimate
             var pms = await (from pm in db.PricingModels
                              join t in db.Tiers on pm.Tier.Id equals t.Id
