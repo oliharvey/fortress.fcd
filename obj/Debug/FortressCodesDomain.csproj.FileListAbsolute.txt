@@ -29,3 +29,4 @@ C:\Users\fiona\Source\Repos\fortress.fcd\bin\Debug\FortressCodesDomain.pdb
 C:\Users\fiona\Source\Repos\fortress.fcd\obj\Debug\FortressCodesDomain.csproj.CoreCompileInputs.cache
 C:\Users\fiona\Source\Repos\fortress.fcd\obj\Debug\FortressCodesDomain.dll
 C:\Users\fiona\Source\Repos\fortress.fcd\obj\Debug\FortressCodesDomain.pdb
+C:\Users\fiona\Source\Repos\fortress.fcd\obj\Debug\FortressCodesDomain.csprojResolveAssemblyReference.cache
