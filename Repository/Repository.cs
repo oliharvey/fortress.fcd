@@ -329,6 +329,12 @@ namespace FortressCodesDomain.Repository
         {
             return await db.Tiers.SingleOrDefaultAsync(pm => pm.PartnerId == partnerID && pm.Name == tierName);
         }
+
+        public async Task<Partner> GetPartnerByIdAsync(Int32 partnerID)
+        {
+            return await db.Partners.SingleOrDefaultAsync(p => p.userid == partnerID);
+        }
+
         public async Task<Level> GetLevelByNameAsync(String levelName)
         {
             return await db.Levels.SingleOrDefaultAsync(pm => pm.Name == levelName);
@@ -857,6 +863,11 @@ namespace FortressCodesDomain.Repository
 
             T query = db.Set<T>().SingleOrDefault(predicate);
             return query;
+        }
+
+        public Task<Country> GetCountryByIso(string countryIso)
+        {
+            return  db.Countries.SingleOrDefaultAsync(c => c.ISO == countryIso.ToUpper());
         }
 
 

@@ -65,6 +65,11 @@ namespace FortressCodesDomain.Repository
 
 
         Task<Tier> GetTierByPartnerTierAsync(Int32 partnerID, String tierName);
+
+        Task<Partner> GetPartnerByIdAsync(Int32 partnerID);
+
+        Task<Country> GetCountryByIso(string countryIso);
+
         Task<Level> GetLevelByNameAsync(String levelName);
         Task<string> GenerateVoucherCode(bool NumericVoucherOnly, int voucherlength);
         int AddVoucherRegistration(tbl_VoucherRegistration entity);

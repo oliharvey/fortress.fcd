@@ -27,7 +27,11 @@ namespace FortressCodesDomain.DbModels
 
         public bool? Protected { get; set; }
 
+        public int?  DefaultPartnerId { get; set; }
+
         public virtual Currency Currency { get; set; }
+
+        public virtual Partner DefaultPartner { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Device> Devices { get; set; }

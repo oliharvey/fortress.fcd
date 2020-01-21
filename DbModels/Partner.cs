@@ -13,6 +13,7 @@ namespace FortressCodesDomain.DbModels
             DeviceLevels = new HashSet<DeviceLevel>();
             PricingModels = new HashSet<PricingModel>();
             Tiers = new HashSet<Tier>();
+            CountryDefaults = new HashSet<Country>();
         }
 
         [Key]
@@ -61,5 +62,9 @@ namespace FortressCodesDomain.DbModels
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tier> Tiers { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Country> CountryDefaults { get; set; }
+
     }
 }

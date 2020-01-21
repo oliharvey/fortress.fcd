@@ -108,6 +108,11 @@ namespace FortressCodesDomain.DbModels
                 .WithOptional(e => e.Partner)
                 .HasForeignKey(e => e.PartnerId);
 
+            modelBuilder.Entity<Partner>()
+                .HasMany(e => e.CountryDefaults)
+                .WithOptional(e => e.DefaultPartner)
+                .HasForeignKey(e => e.DefaultPartnerId);
+
             modelBuilder.Entity<PartnerProgramme>()
                .HasMany(e => e.Partners)
                .WithOptional(e => e.PartnerProgramme)

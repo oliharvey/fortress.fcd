@@ -25,5 +25,7 @@
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Partner> Partners { get; set; }
 
+        public int? UnderwriterPartnerId { get; set; }
+
     }
 }
