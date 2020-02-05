@@ -52,6 +52,20 @@ namespace FortressCodesDomain.DbModels
 
         public virtual Voucher Voucher { get; set; }
 
+        [StringLength(100)]
+        public string Address1 { get; set; }
+
+        [StringLength(100)]
+        public string Address2 { get; set; }
+
+        [StringLength(50)]
+        public string Address3 { get; set; }
+
+        [StringLength(50)]
+        public string Address4 { get; set; }
+
+        [StringLength(50)]
+        public string PhoneNumber { get; set; }
 
     }
 }
